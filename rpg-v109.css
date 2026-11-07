@@ -1,0 +1,45 @@
+/* v1.0.9 — Dedicated shop navigation, absolutely no overlay on equipment. */
+.gv109-routebar{display:flex;align-items:center;gap:14px;min-height:49px;padding:6px 21px;background:linear-gradient(105deg,#e4f4f1,#f9fcf9 55%,#d6f0eb);border-bottom:2px solid #79aeb4;color:#1e5267;position:relative;z-index:21}
+.gv109-routebar .gv109-exit{flex:0 0 auto;min-width:155px;min-height:35px;padding:6px 14px;font-size:14px;line-height:1.1;font-weight:850;white-space:nowrap;border:1px solid #599a8e;border-radius:10px;background:#0b765e;color:#fff;cursor:pointer}
+.gv109-routebar .gv109-exit:hover,.gv109-routebar .gv109-exit:focus-visible{background:#158e74;outline:2px solid #e6bd59}
+.gv109-route-status{flex:1;font-size:12px;min-width:0;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gv109-routebar .gv108-store-supply,.gv109-routebar .gv-gear-shop .gv108-store-supply{position:static!important;inset:auto!important;left:auto!important;top:auto!important;right:auto!important;bottom:auto!important;z-index:auto!important;flex:0 0 auto;width:auto!important;max-width:none!important;min-width:183px!important;height:35px!important;min-height:35px!important;padding:5px 14px!important;line-height:1.15;font-size:13px!important;border-width:1px!important;border-radius:10px!important;box-shadow:0 2px 6px #123b4830!important;white-space:nowrap!important}
+/* Under all shop backgrounds, the door is in the left side of the scene. */
+.gv-world .gv-exit{left:76px!important;top:298px!important;width:167px!important;max-width:167px!important;min-height:35px!important;height:35px!important;font-size:12px!important;line-height:1!important;white-space:nowrap!important;padding:5px 8px!important;text-align:center!important;z-index:8!important}
+.gv-world .gv-exit::after{content:' 🚪';font-size:13px}
+.gv109-door-click{position:absolute;z-index:6;left:83px;top:333px;width:124px;height:157px;cursor:pointer;border:1px solid transparent;border-radius:4px;background:transparent;outline-offset:0}
+.gv109-door-click:hover,.gv109-door-click:focus-visible{border:3px solid #70efcb;background:#1c849b19;outline:2px solid #f0cd6e}
+.gv-gear-shop .gv-exit{left:22px!important;top:260px!important;width:159px!important}
+.gv-cabinet-door.open .gv-inner-shelf{overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;max-height:100%;padding-bottom:10px;gap:9px!important}
+.gv-cabinet-door.open .gv-storedproduct{flex:none;min-height:32px}
+/* 3 crates visible in the lifting rig, 3 on cart and 3 in warehouse. */
+.gv106-cargoStack{width:122px;left:12px;gap:4px;justify-content:center}
+.gv106-cargoStack i{width:33px;flex:none}
+@media(max-width:900px){.gv109-routebar{gap:7px;padding:5px 8px;flex-wrap:wrap}.gv109-route-status{flex:1 1 160px;text-align:left;font-size:10px}.gv109-routebar .gv108-store-supply{min-width:145px!important;font-size:11px!important}}
+
+/* Precisely mapped interaction zones: reveal only the hovered actual object. */
+.gv109-precision-hits{position:absolute;inset:0;pointer-events:none;z-index:5}
+.gv109-precision-hit{position:absolute;pointer-events:auto;border:2px solid transparent;border-radius:5px;background:transparent;cursor:pointer;padding:0!important;box-shadow:none!important;transition:border-color .12s,background .12s,box-shadow .12s}
+.gv109-precision-hit:hover,.gv109-precision-hit:focus-visible{border-color:#ffe18b;background:#a0edc821;box-shadow:inset 0 0 12px #f8ffff44,0 0 0 2px #0b738e6b;outline:none}
+.gv109-pointer-tip{position:absolute;z-index:14;max-width:205px;pointer-events:none;padding:5px 9px;background:#064f62f5;color:#fff;font-size:12px;font-weight:750;line-height:1.25;white-space:nowrap;border:1px solid #bcf5d7;border-radius:8px;box-shadow:0 3px 8px #092f3d77}
+.gv109-pointer-tip[hidden]{display:none!important}
+/* All three equipment controls sit on their matching physical object in the PASS art.
+   The rear shelf hit areas never overlap the opaque foreground product cards. */
+.gv-world:not(.gv-gear-shop) .gv-product-0{left:122px!important;top:522px!important}
+.gv-world:not(.gv-gear-shop) .gv-product-1{left:224px!important;top:522px!important}
+.gv-world:not(.gv-gear-shop) .gv-product-2{left:326px!important;top:522px!important}
+.gv-world:not(.gv-gear-shop) .gv-scale{left:725px!important;top:485px!important;min-height:94px!important;width:181px!important}
+.gv-world:not(.gv-gear-shop) .gv-packing{left:1211px!important;top:624px!important;width:172px!important;height:46px!important;min-height:46px!important;font-size:14px!important}
+.gv-world:not(.gv-gear-shop) .gv-checkout{left:1409px!important;top:614px!important;width:186px!important;min-height:72px!important;height:72px!important}
+.gv-world:not(.gv-gear-shop) .gv-checkout strong{font-size:16px!important}
+.gv-world:not(.gv-gear-shop) .gv-checkout small,.gv-world:not(.gv-gear-shop) .gv-cart-count{font-size:11px!important}
+/* The gear shop already has a dedicated 8-tile equipment display. */
+.gv-gear-shop .gv109-precision-hits{display:none!important}
+
+/* The PASS photo already includes a green EXIT sign. Do not print a second
+   EXIT button on top of the physical door. Both toolbar and door use action('exit'). */
+.gv-world .gv-exit{visibility:hidden!important;pointer-events:none!important}
+.gv109-door-click.gv109-gear-door{left:12px;top:289px;width:72px;height:298px;background:linear-gradient(90deg,#6c9d9e 0 9%,#d3e8e5 10% 93%,#648a91 94%);border:3px solid #497a87;border-radius:4px 10px 6px 3px;box-shadow:inset -9px 0 #75a4a688,0 4px 11px #17455888}
+.gv109-gear-door::before{content:'출입문';display:block;position:absolute;top:14px;left:6px;right:6px;font-size:11px;font-weight:850;color:#134e64;text-align:center;background:#f4f7f4df;border-radius:4px;padding:3px 0}
+.gv109-gear-door::after{content:'';position:absolute;right:6px;top:145px;width:6px;height:22px;border-radius:4px;background:#e8bb60;box-shadow:0 1px 4px #32646e}
+.gv109-door-click.gv109-gear-door:hover,.gv109-door-click.gv109-gear-door:focus-visible{background:linear-gradient(90deg,#5b8f91 0 9%,#ccf7e9 10% 93%,#648a91 94%);border-color:#ffe18b}

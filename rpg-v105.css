@@ -1,0 +1,28 @@
+/* KAFV v1.0.5 · equipment-only shop scoped stylesheet */
+.gv-gear-shop .gv-shop-bg-gear{background:url('game-art/gear_shop.svg') center/100% 100% no-repeat!important}
+.gv-gear-shopcard .gv-shopphoto{background:url('game-art/gear_shop.svg') center/cover no-repeat!important;filter:saturate(.95)!important}
+.gv-gear-shop .gv-store-sign{background:#0b5176ee!important;border-color:#76bacc!important}
+.gv-gear-shop .gv-gear-rack-tag{position:absolute;left:88px;top:333px;z-index:4;background:#eff9f3f2;border:2px solid #6e9d9b;border-radius:8px;padding:8px 16px;color:#1b5364;font-size:16px;font-weight:850;pointer-events:none}
+.gv-gear-shop .gv-productzones{z-index:6!important}
+.gv-gear-shop .gv-gear-product{display:flex!important;flex-direction:column;gap:2px!important;width:142px!important;height:99px!important;min-height:99px!important;background:#fffbebe8!important;border:2px solid #d0a866!important;border-radius:10px!important;padding:7px 3px!important;justify-content:center!important;box-shadow:0 4px 11px #113b4855!important;backdrop-filter:none!important;color:#16445a!important}
+.gv-gear-shop .gv-gear-product .gv-gear-emoji{font-size:27px;line-height:1.06}
+.gv-gear-shop .gv-gear-product .gv-producttitle{font-size:15px!important;line-height:1.14!important}
+.gv-gear-shop .gv-gear-product .gv-prodspec{font-size:10px!important}
+.gv-gear-shop .gv-gear-product .gv-stockbadge{font-size:10px!important}
+.gv-gear-shop .gv-gear-product-0{left:94px!important;top:394px!important}
+.gv-gear-shop .gv-gear-product-1{left:251px!important;top:394px!important}
+.gv-gear-shop .gv-gear-product-2{left:408px!important;top:394px!important}
+.gv-gear-shop .gv-gear-product-3{left:565px!important;top:394px!important}
+.gv-gear-shop .gv-gear-product-4{left:94px!important;top:510px!important}
+.gv-gear-shop .gv-gear-product-5{left:251px!important;top:510px!important}
+.gv-gear-shop .gv-gear-product-6{left:408px!important;top:510px!important}
+.gv-gear-shop .gv-gear-product-7{left:565px!important;top:510px!important}
+.gv-gear-shop .gv-scale{left:795px!important;top:527px!important;width:200px!important;height:89px!important;min-height:89px!important;background:#e5f4efed!important;border:3px solid #739e9f!important;border-radius:11px!important;box-shadow:0 5px 15px #0d354555!important;padding:9px 4px!important}
+.gv-gear-shop .gv-scale::before{display:none!important}
+.gv-gear-shop .gv-scale strong,.gv-gear-shop .gv-scale small{display:block!important;color:#154f63!important;font-size:15px!important}
+.gv-gear-shop .gv-scale small{font-size:11px!important}
+.gv-gear-shop .gv-scale em{display:none!important}
+.gv-gear-shop .gv-packing{left:1182px!important;top:625px!important;width:180px!important}
+.gv-gear-shop .gv-checkout{left:1410px!important;top:603px!important}
+.gv-gear-shop .gv-traceboard{left:1287px!important;top:165px!important;z-index:4!important}
+.gv-gear-shop .gv-floorcaption{background:#f8fcf6f2!important;color:#1e5261!important}

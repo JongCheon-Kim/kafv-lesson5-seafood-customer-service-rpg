@@ -1,0 +1,51 @@
+/* KAFV v1.0.4 | two-pane layout, independent actor, complete seller, scrollable provenance, original music */
+/* v1.0.3 output panel deliberately retired; receipts remain in the in-world checkout panel. */
+#simulator-screen.gv-v100-ready .sim-grid{display:grid!important;grid-template-columns:clamp(210px,15vw,265px) minmax(0,1fr)!important;gap:10px!important;max-width:none!important}
+#simulator-screen.gv-v100-ready .sim-locations{grid-column:1!important;min-width:0!important}
+#simulator-screen.gv-v100-ready .sim-stage{grid-column:2!important;min-width:0!important;max-width:none!important}
+#simulator-screen.gv-v100-ready .gv-output-report{display:none!important}
+#simulator-screen.gv-v100-ready .sim-grid:fullscreen{grid-template-columns:clamp(205px,15vw,265px) minmax(0,1fr)!important}
+.gv-tinyshopper{animation:gv-stable-market-walk 16s linear infinite alternate!important;transform:translate3d(0,0,0);backface-visibility:hidden;will-change:transform}
+@keyframes gv-stable-market-walk{from{transform:translate3d(-76px,0,0)}to{transform:translate3d(76px,0,0)}}
+@media(prefers-reduced-motion:reduce){.gv-tinyshopper{animation:none!important}}
+/* Full height seller artwork; feet and shadow anchored in same world-coordinate plane as customer. */
+.gv-seller{width:126px!important;height:250px!important;overflow:visible!important;justify-content:flex-end!important}
+.gv-seller img{display:block!important;width:116px!important;height:227px!important;max-width:100%!important;object-fit:contain!important;object-position:center bottom!important;filter:none!important}
+.gv-customer{width:116px!important;height:225px!important}
+.gv-customer img{height:204px!important;max-width:100%!important}
+.gv-actor,.gv-actor img{backface-visibility:hidden!important;transform-style:flat!important}
+.gv-actor img{animation:none!important}
+/* Full provenance text inside a vertically scrollable, independent card body. */
+.gv-focuspanel{display:flex!important;flex-direction:column!important;width:332px!important;max-height:416px!important;overflow:hidden!important;overscroll-behavior:contain;}
+.gv-focuspanel[hidden]{display:none!important}
+.gv-focuspanel header,.gv-focuspanel nav,.gv-focuspanel footer,.gv-focuspanel .gv-panelactions,.gv-focuspanel .gv-smallactions{flex:0 0 auto!important}
+.gv-focuspanel .gv-panelproduct{flex:1 1 auto!important;display:flex!important;min-height:0!important;max-height:274px!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain;scrollbar-width:auto;scrollbar-color:#207c94 #deedef;padding-bottom:11px!important}
+.gv-focuspanel .gv-panelproduct .gv-producticon{flex:0 0 56px!important;width:56px!important;min-width:56px!important;height:60px!important;font-size:27px!important;position:sticky;top:0;}
+.gv-focuspanel .gv-panelproduct .gv-panellines{min-width:0;flex:1 1 auto}
+.gv-focuspanel .gv-panellines>div{display:flex;flex-wrap:wrap!important;gap:3px!important;align-items:start!important}
+.gv-focuspanel .gv-panellines>div span{flex:0 0 100%;font-size:10px!important}
+.gv-focuspanel .gv-panellines>div b{font-size:11px!important;line-height:1.42!important;text-align:left!important;overflow-wrap:anywhere!important;word-break:break-word!important;max-width:100%!important}
+.gv-focuspanel .gv-fullpanellines{flex:1 1 auto!important;min-height:0!important;overflow:auto!important;overscroll-behavior:contain;scrollbar-width:auto}
+.gv-provenance-hint{color:#267787!important;font-size:10px!important;text-align:center;padding:3px 6px!important;background:#e2f4f0}
+/* Single complete scale object: do not use photographed/cropped scale as a functioning prop. */
+.gv-scale{left:483px!important;top:537px!important;width:194px!important;height:112px!important;min-height:112px!important;box-sizing:border-box!important;padding:14px 6px 6px!important;background:linear-gradient(145deg,#eff7f5 0%,#c0dbdc 58%,#85aebb 100%)!important;border:3px solid #417988!important;border-radius:7px!important;box-shadow:inset 0 1px 3px #fff,0 4px 10px #0e415b88!important;color:#13455a!important}
+.gv-scale::before{content:'';position:absolute;left:13px;right:13px;top:-13px;height:14px;background:linear-gradient(#f8ffff,#a8cbd2);border:3px solid #698998;border-radius:5px 5px 8px 8px;box-shadow:0 3px 2px #254b5966}
+.gv-scale strong{font-size:12px!important;margin-top:1px!important}.gv-scale small{font-size:9px!important}.gv-scale em{font-size:17px!important;line-height:1.25!important;background:#082c40!important;color:#aaf8e6!important;border:1px solid #99dae3!important;min-width:130px!important;padding:3px 5px!important}
+/* No old scale with cropped outline, just an integral stainless prep bench behind the true scale. */
+.gv-original-scale-cover{left:651px!important;top:470px!important;width:274px!important;height:265px!important;z-index:1!important;box-sizing:border-box!important;background:linear-gradient(165deg,#e6efec 0 9%,#a5bdc0 10% 12%,#d3dedc 13% 19%,#92afb5 20% 65%,#d2dcda 66% 93%,#889aa0 100%)!important;border:3px solid #94adb0!important;border-radius:8px!important;box-shadow:inset 2px 2px 9px #eaf7f5,0 5px 5px #2b4d5555!important}
+.gv-original-scale-cover::before{content:''!important;position:absolute!important;left:12px!important;right:12px!important;top:14px!important;height:12px!important;border:2px solid #5f8b94!important;background:linear-gradient(#f2ffff,#93b8bb)!important}
+.gv-original-scale-cover::after{content:'위생 작업대'!important;position:absolute!important;right:17px!important;bottom:15px!important;color:#305365!important;font-size:12px!important;font-weight:800}
+/* Music button integrated with the game, not only an external header control. */
+.gv-bgm-button{border:1px solid #72c6c5!important;background:#e7f7f5!important;color:#175c73!important;min-width:98px}
+.gv-bgm-button[aria-pressed="true"]{background:#137c7a!important;color:#fff!important}
+@media(max-width:700px){#simulator-screen.gv-v100-ready .sim-grid{display:block!important} .gv-focuspanel{max-height:330px!important}}
+
+/* Visual QA correction: removed artificial grey rectangle covering the real scale/counter.
+   Use the single scale already present in the photographic independent background,
+   and attach its interactive numeric display to that exact instrument. */
+.gv-original-scale-cover{display:none!important}
+.gv-scale{left:720px!important;top:485px!important;width:184px!important;height:94px!important;min-height:94px!important;z-index:6!important;background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;overflow:visible!important}
+.gv-scale::before{display:none!important}
+.gv-scale strong,.gv-scale small{display:none!important}
+.gv-scale em{position:absolute!important;top:78px!important;left:26px!important;width:126px!important;min-width:126px!important;text-align:center!important;display:block!important;background:#063146eb!important;border-radius:7px!important;box-shadow:0 2px 7px #12404c88!important;z-index:7!important}
+.gv-scale .gv-scale-item{position:absolute!important;top:59px!important;left:20px!important;width:140px!important;text-align:center!important;color:#17394f!important;font-size:11px!important}

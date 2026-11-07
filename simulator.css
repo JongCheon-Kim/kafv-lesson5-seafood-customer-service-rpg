@@ -1,0 +1,396 @@
+/* v0.4: keep two outer tabs and v0719 left-command/right-scene game contract. */
+.simulator-screen{margin:0 12px 12px;gap:9px;overflow:visible}.sim-grid{display:grid;grid-template-columns:minmax(240px,25%) minmax(0,1fr);gap:10px;min-height:660px;align-items:stretch}.sim-hero{background:linear-gradient(115deg,#0d2b48 0%,#11557c 56%,#088e94 100%);border-radius:12px;padding:12px 20px;box-shadow:0 9px 26px #0b395220}.sim-hero h2{font-weight:900;letter-spacing:-.035em;font-size:22px}.sim-hero-stats{min-width:120px}.sim-locations{padding:12px;display:flex;flex-direction:column;gap:6px;max-height:calc(100vh - 260px);min-height:620px;overflow:auto;background:#f7fbff}.sim-side-title{padding:3px 2px 7px;color:#123c57;font-size:13px}.sim-side-minor{padding:12px 2px 2px;border-top:1px solid #d8e6ee;margin-top:5px}.sim-rooms{display:grid;grid-template-columns:1fr;gap:5px}.sim-room{padding:5px 6px;gap:9px;min-height:51px;position:relative;background:#fff;border-color:#dce8ef;transition:transform .18s,box-shadow .18s}.sim-room img{width:62px;height:47px;object-fit:cover;border-radius:6px;flex-shrink:0;filter:saturate(.95)}.sim-room:hover,.sim-cmd:hover{transform:translateY(-1px);box-shadow:0 5px 13px #1352781e}.sim-room.selected{border-color:#0ba6a6;box-shadow:inset 4px 0 #0db3a3,0 4px 16px #0b969622;background:#e9faf7}.sim-room b{font-size:12px;line-height:1.25}.sim-room .r-label{flex:1;min-width:0}.sim-room small{font-size:10px}.sim-room .meter{font-size:10px;flex-shrink:0}.sim-commands{display:flex;flex-direction:column;gap:6px}.sim-cmd{display:flex;gap:9px;align-items:center;text-align:left;width:100%;background:#fff;border:1px solid #cadfe9;border-radius:9px;padding:6px;min-height:67px;color:#153b51;transition:all .2s}.sim-cmd .cmd-thumb{height:51px;width:83px;flex-shrink:0;border-radius:7px;overflow:hidden;background:#16456a}.sim-cmd .cmd-thumb img{width:100%;height:100%;object-fit:cover;object-position:center 48%}.sim-cmd>span:nth-child(2){flex:1;min-width:0}.sim-cmd small{display:block;color:#6886a0;font-size:10px;margin-bottom:3px}.sim-cmd b{display:block;font-size:12px;line-height:1.38;word-break:keep-all}.sim-cmd .cmd-state{font-size:21px;color:#168db0}.sim-cmd.active{background:#e6fbf6;border-color:#0c9c88;box-shadow:inset 4px 0 #0ba38d}.sim-cmd.done .cmd-state{color:#078958}.sim-record-buttons{border-top:1px solid #d8e7ef;margin-top:9px;padding-top:10px;font-size:12px;display:grid;gap:6px}.sim-record-buttons button{border:1px solid #7eb9ce;background:#eaf7fc;border-radius:7px;padding:8px;color:#0f637a;font-weight:800}.sim-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px}.sim-actions button{font-size:11px;padding:9px 4px}.sim-stage{min-height:660px;display:flex;flex-direction:column;background:#092c41;overflow:hidden;box-shadow:0 10px 26px #072c4633}.sim-stage-head{padding:11px 14px;align-items:center;gap:10px}.sim-stage-head b{display:block;font-size:15px;margin-bottom:2px}.sim-stage-head span{font-size:10px}.sim-stage-tools{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}.sim-stage-tools>button{font:700 11px/1.2 inherit;color:#d7faff;background:#204e65;border:1px solid #4d96aa;border-radius:6px;padding:7px 9px;white-space:nowrap}.sim-stage-tools>label{display:flex;align-items:center;gap:6px;font-size:10px;color:#d1e8ed;white-space:nowrap}.sim-stage-tools input{width:78px;accent-color:#42d1bb}.sim-scene{height:clamp(310px,42vw,520px);min-height:310px;flex:0 0 auto;background:#06263b;isolation:isolate;overflow:hidden}.scene-visual{position:absolute;inset:0;overflow:hidden;z-index:0}.scene-photo{position:absolute;inset:0;background-image:var(--stage-photo);background-size:cover;background-position:center;filter:saturate(1.1) brightness(.79);transform:scale(1.02);animation:stageCome .35s ease-out}@keyframes stageCome{from{filter:brightness(.48);transform:scale(1.06)}to{filter:saturate(1.1) brightness(.79);transform:scale(1.02)}}.scene-dim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,32,49,.64) 0%,rgba(5,30,48,.09) 44%,rgba(4,22,39,.52) 100%),linear-gradient(0deg,rgba(4,29,47,.73) 0%,transparent 40%,rgba(0,25,43,.25) 100%)}.scene-hud{position:absolute;left:4.5%;top:4%;max-width:62%;display:flex;flex-direction:column;gap:2px;color:white;text-shadow:0 2px 11px #071f30}.scene-hud .hud-tag{font-size:10px;color:#65e6ee;letter-spacing:.13em;font-weight:800}.scene-hud strong{font-size:25px;line-height:1.25;letter-spacing:-.04em}.scene-hud small{font-size:11px;color:#e4f4f8;max-width:300px}.scene-scan{position:absolute;right:20px;top:15px;display:flex;align-items:center;gap:9px;color:#d8fbfc;font-size:10px;background:#04253693;border:1px solid #56bfc675;padding:6px 10px;border-radius:20px}.scene-scan i{width:7px;height:7px;background:#41dfae;border-radius:50%;box-shadow:0 0 12px #41dfae;animation:pulse .9s infinite alternate}@keyframes pulse{to{opacity:.32}}.scene-object{position:absolute;transform:translate(-50%,-50%);z-index:4;display:flex;flex-direction:column;align-items:center;border:0;background:none;color:white;width:118px;cursor:pointer;transition:transform .18s}.scene-object .pin-icon{display:grid;place-items:center;width:49px;height:49px;font-size:24px;border-radius:14px;border:2px solid #b7eeff;background:linear-gradient(160deg,#0b476ebf,#0e96a4da);box-shadow:0 0 0 6px #64dbe122,0 8px 25px #012031a8;text-shadow:0 1px 5px #1d4152}.scene-object .pin-name{display:block;background:#082d48e8;color:#eefcff;border:1px solid #8bd7e8bb;font-weight:800;font-size:10px;line-height:1.25;padding:5px 8px;border-radius:7px;margin-top:5px;max-width:128px;text-align:center;box-shadow:0 4px 9px #072a3870}.scene-object:hover,.scene-object.active{transform:translate(-50%,-55%) scale(1.07);z-index:9}.scene-object.active .pin-icon{background:linear-gradient(145deg,#1aaa9a,#08786c);box-shadow:0 0 0 8px #64f7c43f,0 6px 24px #022b3c}.scene-object.done .pin-icon{background:#068767;border-color:#a4ffd0}.sim-actor{left:13%;top:74%;height:49px;width:38px;z-index:7;filter:drop-shadow(0 5px 5px #002039);transition:left .75s ease-in-out,top .75s ease-in-out}.sim-actor .body{background:#1ba9d3}.sim-actor.walking .foot1{animation:simstep .2s infinite alternate}.sim-actor.walking .foot2{animation:simstep .2s .1s infinite alternate}.sim-bubble{position:absolute;left:7%;bottom:8%;z-index:8;max-width:280px;border:1px solid #94dbea;background:#fffef8f2;border-radius:10px;box-shadow:0 7px 24px #0624398f;color:#1d455d;display:flex;flex-direction:column;gap:4px;padding:9px 12px;font-size:11px;line-height:1.55;pointer-events:none}.sim-bubble strong{color:#0b7193;font-size:11px}.sim-bubble:before{content:'';position:absolute;bottom:-10px;left:24px;border-left:9px solid transparent;border-right:9px solid transparent;border-top:10px solid #fffef8}.sim-bubble.hidden{display:none}.sim-story-section{background:#fff;min-height:290px;display:flex;flex-direction:column;flex:1}.story-section-head{background:#dceff7;display:flex;justify-content:space-between;align-items:center;padding:8px 13px;color:#0c5677;font-size:11px;font-weight:800}.story-section-head span:last-child{font-weight:600;color:#567a8d}.sim-case-body{flex:1;padding:13px 16px 16px;overflow:auto;max-height:335px;scrollbar-width:thin}.sim-tag{font-size:10px;margin:0 0 3px;color:#0f968e}.sim-case-body h3{margin:0 0 6px;font-size:18px;color:#112e47}.story-lead{display:flex;gap:12px;align-items:start;background:linear-gradient(105deg,#edf8fd,#f6fbfd);border-left:4px solid #2aa0c2;border-radius:8px;padding:8px 13px;color:#194c6a}.story-lead p{margin:0;font-size:12px;line-height:1.65}.story-mark{font-family:serif;color:#218eac;font-size:31px;line-height:1}.sim-case-body .question{margin:9px 0 7px}.sim-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.sim-choice{display:flex;align-items:start;gap:9px;background:white;border-color:#cbdde7;padding:10px;line-height:1.45}.choice-num{display:grid;place-items:center;border-radius:50%;color:white;background:#14658d;width:22px;height:22px;flex-shrink:0;font-size:11px}.sim-feedback{margin:8px 0 0;padding:8px}.sim-feedback p{margin:0}.sim-case-buttons{display:flex;gap:7px;margin-top:10px}.sim-case-buttons button{font-size:11px}.story-placeholder{min-height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#6b899b;text-align:center;gap:4px}.story-placeholder span{font-size:35px}.story-placeholder b{color:#164e71;font-size:15px}.story-placeholder p{font-size:12px;max-width:570px;margin:1px}.sim-stage-foot{font-size:11px}.field-practice-nav{background:#fff;border:1px solid #d0e1ed;padding:8px 10px;border-radius:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}.field-practice-nav strong{color:#116788}.field-practice-nav span{font-size:11px;color:#637f91;flex:1}.field-practice-nav button{background:#eaf5fc;border:1px solid #b8d6e8;border-radius:7px;padding:7px 11px;color:#0d5982;font-size:11px;font-weight:750}.sim-overlay{position:fixed;inset:0;background:#031a29bd;z-index:105;display:grid;place-items:center;padding:12px}.sim-modal{width:min(680px,96vw);max-height:85vh;overflow:auto;background:#f6fbff;border-radius:15px;box-shadow:0 24px 70px #081b3178;border:1px solid #bde4ed}.sim-modal-head{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(115deg,#0b4264,#0c857d);color:white;padding:15px 20px}.sim-modal-head h2{margin:0;font-size:19px}.sim-modal-head button,.sim-pip button{border:1px solid #b8d7e6;background:#edfafd;border-radius:6px;padding:4px 9px;color:#135572}.sim-modal-body{padding:15px 21px}.sim-modal-body h3{color:#126885;font-size:13px;margin:12px 0 4px}.sim-modal-body p{background:#eaf5fa;border-left:3px solid #4ca9c3;padding:10px 12px;margin:3px 0;border-radius:6px;font-size:13px;line-height:1.7}.sim-disclaimer{padding:7px 20px 15px;font-size:11px;color:#647d91}.sim-pip{position:fixed;z-index:98;width:min(550px,70vw);right:30px;bottom:30px;background:white;border:2px solid #178cb4;border-radius:12px;box-shadow:0 12px 40px #08395699;overflow:hidden}.sim-pip header{display:flex;justify-content:space-between;background:#0b527e;color:white;padding:7px 10px}.sim-pip img{width:100%;display:block;max-height:48vh;object-fit:contain}.sim-pip[hidden],.sim-overlay[hidden]{display:none!important}.sim-footer{font-size:11px;margin:0 0 9px;color:#547389}.sim-hero,.field-practice-nav{flex-shrink:0}
+@media(max-width:1120px){.sim-grid{grid-template-columns:225px 1fr}.sim-choices{grid-template-columns:1fr}.sim-locations{max-height:none}.sim-stage{min-height:620px}.sim-story-section{min-height:300px}.sim-case-body{max-height:400px}}
+@media(max-width:780px){.simulator-screen{margin:0 7px 80px}.sim-grid{display:flex;flex-direction:column}.sim-locations{min-height:0;max-height:none}.sim-rooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.sim-room img{width:45px}.sim-commands{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.sim-cmd .cmd-thumb{width:52px;height:53px}.sim-cmd b{font-size:10px}.sim-stage-head{display:flex;flex-direction:column;align-items:start}.sim-stage-tools{justify-content:start}.sim-scene{height:360px;min-height:360px}.scene-object{width:100px}.scene-object .pin-icon{height:38px;width:38px;font-size:17px}.scene-object .pin-name{font-size:9px}.scene-hud strong{font-size:18px}.scene-hud small{display:none}.sim-bubble{max-width:190px;font-size:10px;left:2%;bottom:2%}.sim-stage{min-height:0}.sim-case-body{max-height:none}.sim-choices{grid-template-columns:1fr}.sim-pip{width:min(95vw,550px);right:2vw;bottom:90px}}
+@media(prefers-reduced-motion:reduce){.scene-photo,.scene-scan i,.sim-actor,.sim-actor.walking *{animation:none!important;transition:none!important}}
+
+/* Compact viewport and room-specific kinetic micro-visuals. */
+.sim-hero{padding:9px 16px}.sim-hero h2{font-size:19px;margin:1px 0}.sim-hero p{font-size:11px}.field-practice-nav{padding:6px 9px}.sim-stage{min-height:695px}.sim-scene{height:clamp(340px,34vh,420px);min-height:340px}.sim-story-section{min-height:210px}.sim-grid{min-height:0}.scene-photo{transform:scale(1.025)}.sim-story-section .sim-case-body{max-height:290px}.scene-object .pin-icon{position:relative;overflow:hidden}.scene-object .pin-icon:after{content:"";position:absolute;width:12px;height:60px;background:#ffffff53;filter:blur(5px);transform:rotate(35deg);left:-25px;top:-8px;transition:transform .4s,left .4s}.scene-object:hover .pin-icon:after{left:70px}.sim-actor{filter:drop-shadow(0 3px 7px #002b45)}.scene-scan{backdrop-filter:blur(8px)}.scene-photo:after{content:''}.scene-visual:after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 48%,#9de8ff19 49%,transparent 50%);background-size:200% 100%;pointer-events:none;animation:sceneSweep 8s linear infinite}@keyframes sceneSweep{from{background-position:150%}to{background-position:-150%}}.sim-story-section{box-shadow:0 -8px 19px #031a2c50;z-index:3}
+@media(max-width:780px){.sim-scene{height:365px}.sim-stage{min-height:0}.sim-story-section .sim-case-body{max-height:none}}
+
+.sim-subnav{display:flex;gap:7px;margin:2px 0}.sim-subnav button{font-weight:850;color:#176185;background:#f9fcff;border:1px solid #c6dce7;padding:8px 14px;border-radius:8px}.sim-subnav button.selected{background:#059383;border-color:#059383;color:white}.sim-record-dock{position:absolute;z-index:8;right:12px;bottom:12px;display:flex;align-items:center;gap:6px;max-width:68%;background:#092a44e9;border:1px solid #72bbc9;border-radius:10px;padding:8px;box-shadow:0 8px 26px #031a29a3}.sim-record-dock strong{font-size:10px;color:#a9f7f2;min-width:78px;line-height:1.4}.sim-record-dock button{display:grid;gap:2px;max-width:95px;border:1px solid #7fd4e5;background:#eef9fc;border-radius:5px;padding:3px;color:#165575;font-size:9px;font-weight:850}.sim-record-dock img{width:100%;height:45px;object-fit:cover;border-radius:3px}.sim-record-dock button:hover{background:#c8faef}.sim-subnav{flex:0 0 auto}@media(max-width:780px){.sim-record-dock{max-width:95%;right:2%;bottom:3%;padding:5px}.sim-record-dock img{height:30px}.sim-record-dock strong{font-size:9px}}
+/* QA regression fix 2026-11-04: constrain scene overlay to its own canvas. */
+.sim-scene {position:relative;}
+.scene-visual {pointer-events:none;}
+/* Deep QA 2026-11-04: contrast and visual-legibility remediation; preserve v0.7.19 two-column contract. */
+.sim-hero{display:flex;align-items:center;justify-content:space-between;gap:16px;color:#f4fdff;}
+.sim-hero .sim-kicker{color:#a5f8ef!important;}
+.sim-hero h2{color:#fff!important;text-shadow:0 2px 3px #092a4899;}
+.sim-hero p{color:#e0f7ff!important;}
+.sim-hero-stats,.sim-hero-stats strong,.sim-hero-stats span{color:#f8ffff!important;}
+.sim-stage-head{background:#0b314b;color:#f4ffff;}
+.sim-stage-head b,.sim-stage-head span{color:#f4ffff!important;}
+.sim-stage-head .sim-stage-tools label{color:#f4ffff;}
+.sim-room small{font-size:11px;line-height:1.35;}
+.sim-room b,.sim-cmd b{font-size:12px;}
+.sim-cmd small{font-size:11px;}
+.sim-side-title{font-size:13px;font-weight:800;}
+.scene-photo{filter:saturate(1.05) brightness(.94);}
+.scene-dim{background:linear-gradient(90deg,rgba(5,32,49,.53),rgba(5,30,48,.05) 42%,rgba(4,22,39,.31)),linear-gradient(0deg,rgba(4,29,47,.52),transparent 43%,rgba(0,25,43,.16));}
+.scene-object .pin-name{font-size:11px;}
+@media(max-width:780px){
+  .sim-hero{padding:9px 12px;align-items:flex-start;gap:6px;}
+  .sim-hero h2{font-size:16px;line-height:1.2;}
+  .sim-hero p{font-size:11px;line-height:1.35;}
+  .sim-hero-stats{min-width:74px;}
+  .field-practice-nav{display:grid;grid-template-columns:1fr 1fr;gap:5px;}
+  .field-practice-nav strong{grid-column:1/2;}
+  .field-practice-nav span{grid-column:1/-1;line-height:1.35;}
+  .field-practice-nav button{font-size:11px;padding:8px 5px;min-height:34px;white-space:normal;}
+  .sim-locations{padding:7px;gap:5px;}
+  .sim-rooms{display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;}
+  .sim-room{flex:0 0 152px;min-height:58px;scroll-snap-align:start;}
+  .sim-room img{width:38px;height:42px;}
+  .sim-room b{font-size:11px;}
+  .sim-commands{display:flex;flex-direction:row;gap:6px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;}
+  .sim-cmd{flex:0 0 165px;scroll-snap-align:start;padding:6px;min-height:69px;}
+  .sim-cmd .cmd-thumb{width:45px;height:46px;}
+  .sim-cmd b{font-size:11px;}
+  .sim-side-minor{margin:3px 0;padding:6px 0 0;}
+  .sim-record-buttons{margin-top:4px;padding-top:5px;}
+  .sim-actions{margin-top:2px;}
+  .sim-scene{height:330px;min-height:330px;}
+  .scene-object .pin-name{font-size:10px;}
+}
+
+/* v0.4.1: character is truly overlaid on the photographic scene and walks between interactive targets */
+.sim-scene{position:relative;}
+.sim-actor{position:absolute!important;left:13%;top:74%;z-index:8!important;width:72px;height:111px;transform:translate(-50%,-88%);pointer-events:none;transition:left 1.02s cubic-bezier(.18,.6,.25,1),top 1.02s cubic-bezier(.18,.6,.25,1);will-change:left,top;}
+.sim-actor .worker-svg{position:relative;width:66px;height:105px;display:block;margin:auto;filter:drop-shadow(0 3px 4px rgba(0,15,22,.5));transform-origin:50% 78%;}
+.sim-actor .worker-shadow{position:absolute;z-index:-1;left:12px;bottom:10px;width:48px;height:15px;border-radius:50%;background:#001e2580;filter:blur(6px)}
+.sim-actor .worker-label{position:absolute;top:-7px;left:50%;transform:translateX(-50%);background:#083d53e0;color:#fff;border:1px solid #a4e7ee;border-radius:9px;padding:1px 7px;white-space:nowrap;font:700 9px/1.3 system-ui,sans-serif;}
+.sim-actor.walking .worker-svg{animation:workerBob .23s infinite alternate;}
+.sim-actor.walking .leg-l{animation:workerLeft .26s infinite alternate;transform-origin:24px 78px}
+.sim-actor.walking .leg-r{animation:workerRight .26s infinite alternate;transform-origin:42px 78px}
+.sim-actor.working .worker-torso{animation:workerWork .24s ease-in-out 3 alternate;transform-origin:33px 68px}
+.sim-actor.celebrate .worker-svg{animation:workerYay .23s ease-in-out 4 alternate}
+.sim-actor.alert-worker .worker-svg{animation:workerWarn .15s ease-in-out 4 alternate}
+.sim-actor.facing-left .worker-svg{transform:scaleX(-1)}
+@keyframes workerBob{from{translate:0 0}to{translate:0 -4px}}
+@keyframes workerLeft{to{transform:rotate(-19deg)}}@keyframes workerRight{to{transform:rotate(19deg)}}
+@keyframes workerWork{to{transform:rotate(6deg)}}@keyframes workerYay{to{translate:0 -9px}}@keyframes workerWarn{to{transform:rotate(-6deg)}}
+.sim-stage-tools #sim-audio-test{background:#146966;color:#ffffff;border:1px solid #6ad7c5;font-weight:800}
+.sim-stage-tools #sim-audio-state{max-width:155px;font:600 10px/1.2 system-ui;color:#a8f2db;white-space:normal}
+.sim-stage-tools #sim-audio-state[data-error="1"]{color:#ffbfac}
+.scene-object.done:before{content:"완료";position:absolute;right:3px;top:-19px;color:#053927;font-size:10px;background:#aff5c4;padding:2px 5px;border-radius:7px;font-weight:900}
+@media(max-width:780px){.sim-actor{width:52px;height:86px;transform:translate(-50%,-85%)}.sim-actor .worker-svg{width:49px;height:82px}.sim-actor .worker-shadow{left:8px;bottom:6px;width:35px}.sim-actor .worker-label{font-size:8px;top:-10px}.sim-stage-tools #sim-audio-state{max-width:100%}}
+@media(prefers-reduced-motion:reduce){.sim-actor,.sim-actor.walking .worker-svg,.sim-actor.walking .leg-l,.sim-actor.walking .leg-r,.sim-actor.working .worker-torso{animation:none!important;transition:none!important}}
+
+/* v0.4.2 - keep every photograph visible at its native 1260:760 composition */
+.sim-scene{height:auto!important;min-height:0!important;aspect-ratio:1260/760;}
+.sim-scene .scene-photo{transform:none!important;animation:none!important;background-size:100% 100%!important;background-position:center!important;}
+.sim-scene .scene-dim{pointer-events:none;}
+.scene-object.scene-photo-target{display:block;position:absolute;box-sizing:border-box;border:2px dashed rgba(236,250,255,.97);border-radius:12px;background:rgba(8,79,106,.10);box-shadow:0 0 0 2px rgba(2,36,58,.25),inset 0 0 0 1px rgba(0,28,50,.32);padding:0;transform:translate(-50%,-50%);color:#fff;cursor:pointer;overflow:visible;transition:background .16s,border-color .16s,box-shadow .16s;}
+.scene-object.scene-photo-target:hover,.scene-object.scene-photo-target:focus-visible,.scene-object.scene-photo-target.active{border:3px dashed #ffe47c;background:rgba(255,236,124,.20);box-shadow:0 0 0 5px rgba(255,211,62,.21),inset 0 0 0 1px #143f5b;outline:0;}
+.scene-object.scene-photo-target.done{border:3px dashed #91fbbd;background:rgba(42,165,96,.18)}
+.scene-object.scene-photo-target .photo-target-num{position:absolute;top:2px;left:3px;display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#0d5b7d;color:#fff;border:1.5px solid #b0e8f2;box-shadow:0 1px 7px #001726cc;font-size:11px;font-weight:900;}
+.scene-object.scene-photo-target .photo-target-label{position:absolute;bottom:0;left:50%;transform:translate(-50%,calc(100% + 3px));width:max-content;max-width:190px;background:rgba(7,36,55,.93);color:#fff;border:1px solid #9fd0db;border-radius:6px;padding:3px 6px;font-weight:800;font-size:10px;line-height:1.35;text-align:center;box-shadow:0 3px 9px #061b2f85;}
+.scene-object.scene-photo-target.done:before{content:'✓ 완료';top:-22px;right:0;background:#c7ffe2;color:#124e30;z-index:1}
+@media(max-width:780px){.sim-scene{min-height:0!important;height:auto!important;aspect-ratio:1260/760}.scene-object.scene-photo-target{border-width:1px;border-radius:5px}.scene-object.scene-photo-target .photo-target-num{width:15px;height:15px;font-size:8px;top:1px;left:1px}.scene-object.scene-photo-target .photo-target-label{display:none}.scene-object.scene-photo-target.active .photo-target-label{display:block;font-size:9px;max-width:90px;white-space:normal;}}
+
+/* Detail QA: retain legible labels while preserving photographic color and light. */
+.sim-scene .scene-photo{filter:saturate(1.10) brightness(1.04)!important;}
+.sim-scene .scene-dim{background:linear-gradient(0deg,rgba(0,18,31,.32),transparent 26%,rgba(0,20,38,.15)),linear-gradient(90deg,rgba(0,26,43,.21),transparent 42%)!important;}
+
+
+/* v0.4.3 cold room prototype: image-led paper diorama with hover contours */
+.sim-cmd .cmd-thumb{display:none!important}
+.sim-cmd{min-height:48px;padding:10px 12px}
+.sim-room img{display:none!important}
+.sim-room{min-height:45px}
+.paper-cold .scene-dim{display:none!important}
+.paper-cold .scene-photo{filter:saturate(1.03) brightness(1.02)!important}
+.paper-cold .scene-visual{pointer-events:none}
+.paper-cold .cold-light{position:absolute;inset:0;background:linear-gradient(0deg,#00172b2c,transparent 20%);pointer-events:none}
+.paper-cold .cold-paper-note{position:absolute;left:1%;top:2%;background:#f5fcffec;border:1px solid #a6cddf;color:#164768;padding:5px 10px;border-radius:7px;font-size:clamp(10px,1.0vw,14px);font-weight:900;box-shadow:0 2px 7px #042c443d}
+.paper-cold .cold-paper-note small{display:block;color:#52778c;font-size:clamp(8px,.7vw,10px);font-weight:600}
+.paper-cold .cold-selection-map{position:absolute;inset:0;width:100%;height:100%;z-index:5;overflow:visible;pointer-events:none}
+.cold-selection-shape{fill:rgba(255,255,255,.006);stroke:transparent;stroke-width:6;stroke-dasharray:15 10;stroke-linejoin:round;stroke-linecap:round;cursor:pointer;pointer-events:visiblePainted;transition:stroke .16s,fill .16s,filter .16s;outline:none}
+.cold-selection-shape:hover,.cold-selection-shape.hovered,.cold-selection-shape:focus-visible{fill:rgba(68,219,240,.12);stroke:#70e8ff;filter:drop-shadow(0 0 6px #054a7c)}
+.cold-selection-shape.selected{fill:rgba(252,220,100,.14);stroke:#ffe378;filter:drop-shadow(0 0 7px #4d4824)}
+.cold-object-label{position:absolute;z-index:6;transform:translate(-50%,0);border:1px solid #b5d8e9;border-radius:16px;padding:3px 8px;background:#eafaffed;box-shadow:0 3px 12px #002a4a80;color:#115279;font:800 clamp(8px,.75vw,12px)/1.2 system-ui;cursor:pointer;white-space:nowrap;transition:background .16s,box-shadow .16s}
+.cold-object-label.hovered,.cold-object-label:hover,.cold-object-label:focus-visible{background:#fef4a8;border-color:#ffcb40;box-shadow:0 0 0 3px #fce9a55e;outline:0}
+.cold-object-label.selected{border-color:#f6a800;background:#fff0ab}
+.paper-cold .sim-actor{z-index:7!important}
+.paper-cold .sim-bubble{z-index:10}
+.cold-hover-hint{position:absolute;bottom:2%;right:1%;z-index:6;border-radius:7px;background:#06354fdf;color:#f4fbff;font:700 clamp(8px,.7vw,12px) system-ui;padding:5px 9px;pointer-events:none}
+.cold-back{position:absolute;top:2%;right:2%;z-index:9;border:1px solid #a7d7e8;border-radius:7px;padding:7px 10px;color:#0b5575;background:#fffef2;font-weight:800;cursor:pointer}
+.cold-meter{position:absolute;top:5%;left:72%;z-index:8;background:#112d42ed;border:2px solid #9cd8e4;border-radius:7px;padding:5px 11px;color:#edffff;box-shadow:0 6px 15px #00334d69;cursor:pointer;min-width:125px;text-align:center}
+.cold-meter span,.cold-meter small{display:block;font:700 9px/1.1 system-ui;color:#9fdfec}
+.cold-meter strong{display:block;font:900 clamp(12px,1.7vw,25px)/1.25 ui-monospace,monospace;color:#aef9ea}
+.cold-stock-peek{position:absolute;right:3%;bottom:7%;z-index:9;width:min(320px,46%);background:#fffdf5f2;border:2px solid #61aaca;border-radius:10px;padding:10px;box-shadow:0 8px 18px #00202e76;color:#17496a;font:12px/1.5 system-ui}
+.cold-stock-peek strong{display:block;font-weight:900}.cold-stock-peek p{margin:3px 0}.cold-stock-peek small{font-size:10px;color:#577d91}
+.cold-ice-pour{position:absolute;top:4%;left:22%;width:28%;height:58%;z-index:8;overflow:visible;pointer-events:none;transform:rotate(7deg)}
+.cold-ice-pour i{position:absolute;top:2%;left:var(--x);width:9px;height:8px;background:#f0fbff;border:1px solid #8ee6fa;border-radius:3px;box-shadow:0 0 6px #b0f8ff;animation:coldFall 1.5s var(--delay) ease-in forwards}
+@keyframes coldFall{0%{transform:translateY(0) rotate(0deg);opacity:0}10%{opacity:1}95%{opacity:1}100%{transform:translateY(280px) rotate(260deg);opacity:0}}
+.paper-cold.cold-enter-zoom .scene-photo{transform-origin:78% 29%!important;animation:coldZoomIn .83s ease-in forwards!important}
+@keyframes coldZoomIn{0%{transform:scale(1);opacity:1}100%{transform:scale(2.9);opacity:.12}}
+.paper-cold.cold-exit-zoom .scene-photo{transform-origin:13% 50%!important;animation:coldZoomOut .62s ease-out forwards!important}
+@keyframes coldZoomOut{0%{transform:scale(1.15)}100%{transform:scale(.83);opacity:.24}}
+.paper-cold .scene-photo{animation:paperColdReveal .32s ease-out!important}
+@keyframes paperColdReveal{from{opacity:.3}to{opacity:1}}
+@media(max-width:780px){.cold-object-label{font-size:8px;padding:3px 5px}.cold-paper-note small{display:none!important}.cold-hover-hint{display:none}.cold-meter{left:72%;min-width:0;padding:3px 6px;top:6%}.cold-meter span,.cold-meter small{display:none}.cold-back{font-size:10px;padding:5px}.cold-stock-peek{font-size:10px;padding:5px}}
+@media(prefers-reduced-motion:reduce){.paper-cold .scene-photo{animation:none!important}.cold-ice-pour i{animation:none!important}}
+
+/* Target-specific duplicate photo layer creates a subtle lifted paper-cut object. */
+.paper-cold .cold-paper-popout{position:absolute;inset:0;background-image:var(--stage-photo);background-size:100% 100%;z-index:3;opacity:0;pointer-events:none;transition:transform .2s ease,opacity .2s ease;filter:drop-shadow(0 0 10px #002c4368);transform:translateY(0)}
+.paper-cold .cold-paper-popout.visible{opacity:1;transform:translate(-2px,-4px)}
+.paper-cold.cold-enter-zoom .scene-photo{transform:scale(2.7)!important;opacity:.05!important;animation:none!important;transition:transform .84s ease-in,opacity .84s!important}
+.paper-cold.cold-exit-zoom .scene-photo{transform:scale(.84)!important;opacity:.18!important;animation:none!important;transition:transform .62s ease-out,opacity .62s!important}
+.paper-cold.cold-enter-zoom .cold-paper-popout,.paper-cold.cold-exit-zoom .cold-paper-popout{opacity:0!important}
+
+
+/* v0.4.4: approved cinematic simulator look translated into actual game visuals. */
+.sim-hero{background:linear-gradient(115deg,#07346d,#0a5a96 70%,#157eb0)!important;box-shadow:0 7px 18px #082c5980!important}
+.paper-cold.sim-scene{height:auto!important;min-height:0!important;aspect-ratio:1295 / 543;background:#071f34}
+.paper-cold.sim-scene[data-depth=inner]{aspect-ratio:1260 / 760}
+.paper-cold .scene-photo{background-size:100% 100%!important;background-position:center!important;filter:saturate(1.08) brightness(1.0)!important;transform:scale(1)!important}
+.paper-cold .scene-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,20,39,.14),transparent 30%);pointer-events:none}
+.paper-cold .cold-paper-note{display:none}
+.paper-cold .cold-selection-map{overflow:visible;z-index:6}
+.paper-cold .cold-selection-shape{fill:rgba(14,208,225,.006);stroke-width:4.8;stroke-dasharray:11 8;stroke:transparent;pointer-events:visiblePainted}
+.paper-cold .cold-selection-shape.hovered,.paper-cold .cold-selection-shape:hover,.paper-cold .cold-selection-shape:focus-visible{fill:rgba(45,178,236,.07);stroke:#e1f8ff;filter:drop-shadow(0 0 3px #11a9f9)}
+.paper-cold .cold-selection-shape.selected{stroke:#ffe172;stroke-width:6;fill:rgba(255,227,126,.09)}
+.paper-cold .cold-object-label{z-index:8;background:#ffffffee;border:1px solid #bed4ea;box-shadow:0 3px 8px #032d4979;font-size:clamp(9px,.7vw,12px);padding:3px 9px;color:#12466c;opacity:0;pointer-events:none;transform:translate(-50%,-10%);transition:opacity .13s,transform .13s}
+.paper-cold .cold-object-label.hovered,.paper-cold .cold-object-label.selected,.paper-cold .cold-object-label:focus-visible{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
+.paper-cold .sim-actor{width:66px!important;height:101px!important;z-index:9!important;filter:drop-shadow(1px 5px 0 #e5f4fc) drop-shadow(0 8px 8px #00355270)!important}
+.paper-cold .sim-actor .worker-svg{width:66px;height:105px;filter:drop-shadow(0 0 2px #f4fbff)}
+.paper-cold .sim-actor.walking .worker-svg{animation:paperWalkBob .22s linear infinite alternate}
+@keyframes paperWalkBob{from{transform:translateY(0)}to{transform:translateY(-6px)}}
+.paper-cold .sim-actor .worker-label{font-size:10px;background:#00374de8;border-radius:8px;padding:2px 5px;color:#fff;white-space:nowrap}
+.paper-cold .cold-paper-popout{z-index:3;opacity:0!important;filter:drop-shadow(0 5px 9px #001424b2)}
+.paper-cold .cold-paper-popout.visible{opacity:.87!important;transform:translate(-2px,-5px) scale(1.007)!important}
+.paper-cold .sim-bubble{left:3%;bottom:3%;max-width:38%;background:#fffef9ee;border-radius:12px;z-index:10;box-shadow:0 8px 20px #00416e75}
+.paper-cold .cold-hover-hint{bottom:2%;right:2%;font-size:11px;background:#063450db;color:#fff}
+/* Simulated freezer doors use a *separate game object layer*, not pixels painted onto the theoretical slides. */
+.paper-cold .cold-door-stage{position:absolute;left:33.4%;top:23%;width:28.5%;height:59%;z-index:4;pointer-events:none;perspective:850px;opacity:0;transition:opacity .18s;transform-style:preserve-3d}
+.paper-cold.cold-door-opening .cold-door-stage{opacity:1}
+.paper-cold .cold-door-stage .door-chamber{position:absolute;inset:0;background:radial-gradient(ellipse at 60% 35%,#4abde7d8 0%,#0c567d 44%,#05233f 96%);border:4px solid #9abecb;box-shadow:inset 0 0 35px #081c46}
+.paper-cold .cold-door-stage .door-chamber:after{content:'❄';position:absolute;left:45%;top:33%;font-size:46px;color:#b5e6f1b3}
+.paper-cold .door-panel{position:absolute;top:0;height:100%;width:50%;background:linear-gradient(100deg,#c1d3de,#638397 15%,#dbe8ee 34%,#6c8498 68%,#d9e6f2 100%);box-shadow:0 2px 12px #001c36a4;transition:transform .75s cubic-bezier(.16,.75,.3,1);border:3px solid #758b9d}
+.paper-cold .door-panel.left{left:0;transform-origin:left center}
+.paper-cold .door-panel.right{right:0;transform-origin:right center}
+.paper-cold.cold-door-opening .door-panel.left{transform:rotateY(-84deg)}
+.paper-cold.cold-door-opening .door-panel.right{transform:rotateY(84deg)}
+.paper-cold.cold-enter-zoom .scene-photo{transform-origin:48% 42%!important;transform:scale(3.0)!important;opacity:.12!important;animation:none!important;transition:transform .58s ease-in,opacity .58s!important}
+.paper-cold.cold-enter-zoom .cold-door-stage{transform-origin:center center;transform:scale(2.2);opacity:.0;transition:transform .58s,opacity .58s}
+.paper-cold .cold-ice-pour.new-game-ice{top:39%;left:77%;width:21%;height:40%;transform:rotate(6deg);z-index:10}
+.paper-cold .cold-ice-pour.new-game-ice i{width:10px;height:9px;border-color:#b9f7ff;background:#faffff}
+/* Main scene only; this compact visual flow lives in the RIGHT panel, never in command cards. */
+.cold-process-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;padding:7px 9px;background:linear-gradient(120deg,#0a3769,#145b94);border-top:1px solid #8fcff599}
+.cold-process-step{position:relative;min-width:0;background:#e9f1fc;border:2px solid #bdd6e9;border-radius:7px;padding:3px;opacity:.79;transition:opacity .2s,border-color .2s}
+.cold-process-step.current{opacity:1;border-color:#66e5ff;box-shadow:0 0 0 2px #82cdef56}
+.cold-process-step img{display:block;width:100%;height:68px;object-fit:cover;border-radius:4px}
+.cold-process-step span{display:block;color:#104a7d;font-size:10px;font-weight:800;text-align:center;line-height:1.2;padding:4px 1px}
+@media(max-width:780px){.paper-cold.sim-scene{aspect-ratio:1295/543!important}.paper-cold.sim-scene[data-depth=inner]{aspect-ratio:1260/760!important}.paper-cold .sim-actor{width:38px!important;height:60px!important}.paper-cold .sim-actor .worker-svg{width:38px;height:60px}.paper-cold .worker-label{display:none!important}.paper-cold .cold-object-label{font-size:8px;padding:2px 4px}.paper-cold .cold-object-label.selected{opacity:1}.cold-process-step img{height:37px}.cold-process-step span{font-size:8px;letter-spacing:-.05em}.paper-cold .sim-bubble{max-width:52%;font-size:9px;padding:5px;bottom:1%}.paper-cold .cold-hover-hint{display:none!important}}
+@media(prefers-reduced-motion:reduce){.paper-cold .sim-actor.walking .worker-svg{animation:none}.paper-cold .door-panel{transition:none}}
+
+/* Compact horizontal HUD: preserve scene visibility at notebook 1366×768. */
+@media(min-width:781px){.sim-stage-head{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;padding:8px 12px!important;min-height:56px!important}.sim-stage-head>div:first-child{flex:1;min-width:160px;max-width:275px}.sim-stage-tools{flex:0 1 auto;flex-wrap:wrap;justify-content:flex-end;gap:5px!important}.sim-stage-tools button{padding:5px 8px!important}.sim-hero{padding:7px 14px!important;min-height:0!important}.sim-hero h2{font-size:17px!important}.sim-hero p{margin:3px 0!important}.sim-hero .sim-kicker{font-size:10px!important}}
+
+/* v0.4.5 source-of-truth SVG contour masks on clean 1672×941 lab photograph. */
+.paper-lab.sim-scene{height:auto!important;min-height:0!important;aspect-ratio:1672/941;background:#0d344b;}
+.paper-lab .scene-photo{background-size:contain!important;background-position:center!important;filter:none!important;transform:none!important;animation:none!important;background-repeat:no-repeat!important}
+.paper-lab .lab-selection-map{position:absolute;inset:0;width:100%;height:100%;z-index:6;overflow:visible;pointer-events:none}
+.paper-lab .lab-selection-shape{fill:rgba(255,255,255,.002);stroke:transparent;stroke-width:7;stroke-dasharray:12 9;stroke-linejoin:round;stroke-linecap:round;cursor:pointer;pointer-events:visiblePainted;transition:fill .15s,stroke .15s,filter .15s}
+.paper-lab .lab-selection-shape.hovered,.paper-lab .lab-selection-shape:hover,.paper-lab .lab-selection-shape:focus-visible{fill:rgba(48,214,251,.07);stroke:#f5fcff;filter:drop-shadow(0 0 5px #1eaedb);outline:0}
+.paper-lab .lab-selection-shape.selected{stroke:#f9d369;fill:rgba(255,221,111,.07);filter:drop-shadow(0 0 3px #b68519)}
+.paper-lab .lab-object-label{position:absolute;z-index:8;transform:translate(-50%,-80%);border:1px solid #98c7d8;border-radius:7px;background:#f4fcffe8;color:#174963;padding:4px 7px;font-size:10px;font-weight:800;white-space:nowrap;box-shadow:0 3px 12px #061d3665;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .15s,transform .15s}
+.paper-lab .lab-object-label.hovered,.paper-lab .lab-object-label.selected,.paper-lab .lab-object-label:focus-visible{opacity:1;pointer-events:auto;transform:translate(-50%,-100%)}
+.paper-lab .sim-bubble{max-width:32%;left:2%;bottom:1%;font-size:10px}
+@media(max-width:780px){.paper-lab.sim-scene{aspect-ratio:1672/941!important}.paper-lab .lab-selection-shape{stroke-width:13}.paper-lab .lab-object-label{font-size:8px;padding:2px 4px}.paper-lab .sim-bubble{display:none}}
+
+/* v0.4.6: one independent paper-worker in every room, depth-proportional movement. */
+.sim-actor { transform-origin:50% 90%!important; filter:drop-shadow(1px 3px 0 #eaf9ff) drop-shadow(0 5px 7px #12324988)!important; }
+.sim-actor .worker-svg{width:66px;height:105px;}
+.sim-actor:not(.walking) .worker-svg{animation:none;}
+.sim-actor.walking .worker-svg{animation:workerBob .23s ease-in-out infinite alternate;}
+.sim-actor .worker-label{font-size:10px;}
+.paper-lab .lab-selection-shape:active{stroke:#fff4a0;stroke-width:9;}
+@media (prefers-reduced-motion:reduce){.sim-actor.walking .worker-svg{animation:none!important}}
+
+/* v0.4.6 numbering hotfix: ordered rooms, missions and clickable scene objects. */
+.sim-room-ordinal{display:inline-grid;place-items:center;min-width:24px;height:22px;line-height:1;background:#075b80;color:#fff;border:1px solid #a7f3f4;border-radius:6px;font-size:11px;font-variant-numeric:tabular-nums;vertical-align:middle}
+.sim-mission-ordinal{color:#07627b;font-weight:900;font-variant-numeric:tabular-nums;background:#ddf9f7;padding:2px 5px;border-radius:4px;margin-right:4px}
+.object-step-dot{position:absolute;z-index:10;transform:translate(-50%,-50%);width:25px;height:25px;display:grid;place-items:center;border:2px solid #b5f7ff;border-radius:50%;background:#07516b;color:#fff;font:900 11px/1 system-ui;box-shadow:0 3px 8px #001d3288;cursor:pointer;transition:background .15s,transform .15s}
+.object-step-dot:hover,.object-step-dot:focus-visible{background:#f0bb31;border-color:#fff;color:#143651;transform:translate(-50%,-50%) scale(1.14);outline:2px solid #fff}
+.paper-lab .lab-object-label.hovered,.paper-lab .lab-object-label.selected,.paper-cold .cold-object-label.hovered,.paper-cold .cold-object-label.selected{transform:translate(-50%,-155%)}
+.paper-cold .cold-object-label.selected{opacity:1;pointer-events:auto}
+@media(max-width:780px){.object-step-dot{width:21px;height:21px;font-size:9px}.sim-room-ordinal{min-width:21px;height:19px;font-size:10px}}
+
+/* v0.4.6 verified movement/layout repair: compact image, full-height commands,
+   unobstructed case text, no duplicate process-strip imagery. */
+@media (min-width: 781px) {
+ .sim-grid {grid-template-columns: minmax(292px,29%) minmax(0,1fr)!important;align-items:stretch;min-height:0!important}
+ .sim-locations {max-height:none!important;min-height:0!important;height:auto!important;align-self:stretch!important;overflow:auto}
+ .sim-stage {min-height:0!important;height:auto!important}
+ .sim-stage .sim-scene {width:min(100%,760px)!important;max-width:760px!important;height:auto!important;min-height:0!important;margin:8px auto 6px!important;flex:0 0 auto!important;}
+ .sim-case-body {max-height:none!important;overflow:visible!important;padding:12px 15px!important}
+ .sim-story-section {min-height:260px!important;flex:0 0 auto!important}
+ .sim-record-buttons {margin-top:auto}
+ .sim-scene .scene-photo{background-size:100% 100%!important;background-position:center!important}
+}
+/* Reveal outlines only while hovered/focused/selected. Label dot remains a small accessible target. */
+.scene-object.scene-photo-target:not(:hover):not(:focus-visible):not(.active){border-color:transparent!important;background:transparent!important;box-shadow:none!important}
+.scene-object.scene-photo-target:not(:hover):not(:focus-visible):not(.active) .photo-target-label{opacity:0;pointer-events:none}
+.scene-object.scene-photo-target:hover .photo-target-label,.scene-object.scene-photo-target.active .photo-target-label{opacity:1}
+/* Avoid animating the actor container by CSS while JS updates per-frame position/scale. */
+.sim-actor {transition:none!important;transform-origin:50% 90%!important;z-index:20!important}
+/* Preserve original proportions on mobile, reduce HUD and scroll inside game. */
+@media(max-width:780px) {
+ .sim-locations {max-height:none!important;min-height:0!important}
+ .sim-story-section .sim-case-body{max-height:none!important;overflow:visible!important}
+ .sim-scene {width:100%!important;height:auto!important;min-height:0!important}
+}
+
+
+/* v0.4.6 paper-piece movement refinement: glide the whole character like a janggi token.
+   Only hands and legs perform subtle gestures; never bob the torso/head. */
+.sim-actor.walking .worker-svg,
+.paper-cold .sim-actor.walking .worker-svg {animation:none!important;}
+.sim-actor .worker-limb{transform-box:fill-box;transform-origin:50% 5%;will-change:transform;}
+.sim-actor.walking .worker-leg-left{animation:kafv-leg-left .40s ease-in-out infinite alternate!important;}
+.sim-actor.walking .worker-leg-right{animation:kafv-leg-right .40s ease-in-out infinite alternate!important;}
+.sim-actor.walking .worker-arm-left{animation:kafv-arm-left .55s ease-in-out infinite alternate!important;}
+.sim-actor.walking .worker-arm-right{animation:kafv-arm-right .55s ease-in-out infinite alternate!important;}
+.sim-actor.working .worker-arm-right{animation:kafv-work-hand .24s ease-in-out 3 alternate!important;}
+@keyframes kafv-leg-left{from{transform:rotate(-8deg)}to{transform:rotate(8deg)}}
+@keyframes kafv-leg-right{from{transform:rotate(8deg)}to{transform:rotate(-8deg)}}
+@keyframes kafv-arm-left{from{transform:rotate(5deg)}to{transform:rotate(-7deg)}}
+@keyframes kafv-arm-right{from{transform:rotate(-5deg)}to{transform:rotate(7deg)}}
+@keyframes kafv-work-hand{from{transform:rotate(-4deg)}to{transform:rotate(11deg)}}
+@media(prefers-reduced-motion:reduce){
+ .sim-actor .worker-limb{animation:none!important}
+}
+
+/* v0.4.6 five-room final visual pass. Two established rooms LAB and COLD are retained. */
+.sim-room img{display:none!important}
+.sim-room{min-height:44px!important;justify-content:flex-start!important;text-align:left!important}
+.sim-room .r-label{display:flex;flex-direction:column;align-items:flex-start;text-align:left}
+.sim-room-ordinal{margin-right:7px}
+.sim-rooms{gap:5px}
+.sim-stage .paper-real.sim-scene{aspect-ratio:1672/941!important;background:#0d3048!important;max-width:min(100%,930px)!important}
+.paper-real .scene-photo{background-size:100% 100%!important;filter:saturate(1.01) brightness(1.01)!important}
+.paper-real .scene-visual::after{display:none!important}
+.paper-real .scene-dim{display:none!important}
+.real-object-map{position:absolute;inset:0;width:100%;height:100%;z-index:7;overflow:visible}
+.real-object-path{fill:rgba(4,164,206,.005);stroke:transparent;stroke-width:8;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:20 10;vector-effect:non-scaling-stroke;cursor:pointer;pointer-events:visiblePainted;transition:fill .13s,stroke .13s}
+.real-object-path.hovered,.real-object-path.selected,.real-object-path:focus-visible{stroke:#ffce51;fill:rgba(3,197,218,.12);filter:drop-shadow(0 0 5px #001923)}
+.real-object-path.selected{stroke:#00dbde}
+.real-object-dot{position:absolute;z-index:12;transform:translate(-50%,-50%);width:22px;height:22px;padding:0;display:grid;place-items:center;border-radius:50%;border:2px solid #a0f2ff;background:#045370;color:#fff;font-size:10px;font-weight:900;font-variant-numeric:tabular-nums;box-shadow:0 2px 7px #042737a8;cursor:pointer}
+.real-object-dot:hover,.real-object-dot.hovered,.real-object-dot.selected{background:#ffcf51;border-color:#fff;color:#183d51}
+.real-object-tag{position:absolute;z-index:12;transform:translate(-50%,-170%);max-width:155px;padding:3px 6px;font-size:10px;font-weight:800;line-height:1.2;color:#16445a;background:#f9feffea;border:1px solid #80c6d8;border-radius:7px;white-space:nowrap;box-shadow:0 3px 12px #10314e55;opacity:0;pointer-events:none}
+.real-object-tag.hovered,.real-object-tag.selected{opacity:1}
+.sim-actor{width:56px!important;height:101px!important;overflow:visible!important;z-index:20!important}
+.sim-actor .worker-photo{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 2px #052538a0);transform-origin:50% 92%}
+.sim-actor .paper-feet{position:absolute;left:19%;width:59%;bottom:1%;height:5%;border-radius:60%;background:#fff9;opacity:0;pointer-events:none}
+.sim-actor.walking .worker-photo{animation:paper-tilt .27s ease-in-out infinite alternate}
+.sim-actor.walking .paper-feet{opacity:.6;animation:paper-feet .35s ease-in-out infinite alternate}
+@keyframes paper-tilt{from{transform:rotate(-1deg)}to{transform:rotate(1deg)}}
+@keyframes paper-feet{from{transform:translateX(-3px)}to{transform:translateX(3px)}}
+.sim-actor.working .worker-photo{animation:paper-work .3s ease-in-out 2 alternate}
+@keyframes paper-work{from{transform:rotate(-1deg)}to{transform:rotate(2deg)}}
+@media (max-width:780px){.sim-stage .paper-real.sim-scene{width:100%!important;max-width:100%!important;aspect-ratio:1672/941!important}.real-object-dot{height:18px;width:18px;font-size:8px}.real-object-tag{font-size:8px;max-width:90px;white-space:normal}.sim-actor{width:40px!important;height:73px!important}}
+@media (prefers-reduced-motion:reduce){.sim-actor.walking .worker-photo,.sim-actor.walking .paper-feet{animation:none}}
+
+/* Restore room-command balance: seven space buttons fit at left, leaving task cards visible. */
+@media(min-width:781px){
+ .sim-locations{height:auto!important;min-height:0!important;max-height:none!important;overflow:auto!important;padding:9px 12px!important;gap:5px!important}
+ .sim-rooms{gap:3px!important}
+ .sim-rooms .sim-room{min-height:37px!important;height:37px!important;padding:3px 9px!important;gap:6px!important;border-radius:6px!important}
+ .sim-rooms .sim-room .r-label b{font-size:11px!important;display:flex;align-items:center;gap:3px;white-space:nowrap}
+ .sim-rooms .sim-room .r-label small{display:none!important}
+ .sim-rooms .sim-room .meter{font-size:10px!important}
+ .sim-stage .paper-real.sim-scene{width:min(100%,820px)!important;max-width:820px!important;margin:7px auto 3px!important}
+ .sim-stage .paper-lab.sim-scene,.sim-stage .paper-cold.sim-scene{margin:7px auto 3px!important}
+ .sim-case-body{padding:8px 12px!important}
+ .sim-story-section{min-height:0!important}
+ .sim-case-body .sim-tag{font-size:10px}
+ .sim-case-body h3{margin:3px 0!important;font-size:14px!important}
+ .sim-case-body .story-lead{padding:6px 10px!important}
+ .sim-case-body .story-lead p{line-height:1.45!important;font-size:11px!important}
+ .sim-choices{gap:4px!important}
+ .sim-choice{padding:6px 8px!important;font-size:11px!important;line-height:1.3!important}
+ .sim-case-buttons{margin-top:5px!important}
+}
+
+@media(min-width:781px){
+ .sim-rooms .sim-room{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;line-height:1.2!important}
+ .sim-rooms .sim-room .r-label{flex:1 1 auto!important;min-width:0!important}
+ .sim-rooms .sim-room .meter{display:inline-block!important;position:static!important;align-self:center!important;margin-left:auto!important;font-size:10px!important;white-space:nowrap!important}
+}
+/* Lesson 5 adaptations: preserve v0.4.7 grid and 2.5D scene scale. */
+.lesson5-scene .lesson5-room-label{position:absolute;left:18px;top:14px;z-index:3;color:#fff;background:#0b3558e3;border:1px solid #78d4ec9f;border-radius:8px;padding:8px 11px;font-size:14px;font-weight:900;box-shadow:0 5px 15px #001c2a91}
+.lesson5-room-label span{display:block;font-size:10px;font-weight:500;color:#d1edf7}
+.lesson5-scene .lesson5-spot{position:absolute;z-index:7;display:flex;flex-direction:column;align-items:center;gap:4px;transform:translate(-50%,-50%);background:transparent;border:0;color:white;min-width:92px;max-width:120px;cursor:pointer}
+.lesson5-spot-num{height:34px;width:34px;border-radius:50%;display:grid;place-items:center;background:#006b93;border:2px solid #c6faff;font-size:12px;font-weight:900;box-shadow:0 0 0 4px #0279a844,0 5px 11px #001c2ebc}
+.lesson5-spot-tag{display:block;background:#062b44e9;border:1px solid #b7e5ffb0;padding:4px 7px;border-radius:5px;font-size:10px;line-height:1.2;font-weight:800;word-break:keep-all;text-align:center}
+.lesson5-spot:hover .lesson5-spot-num,.lesson5-spot.active .lesson5-spot-num{background:#07a79a;box-shadow:0 0 0 7px #00b9a760}
+.lesson5-spot.done .lesson5-spot-num{background:#0e8b60;border-color:#c2fdd5}
+.lesson5-step{font-size:13px;color:#0c4f70;font-weight:850;margin:11px 0 8px;padding-bottom:6px;border-bottom:1px solid #d5e7ef}
+.lesson5-action{min-height:62px;justify-content:flex-start;text-align:left;cursor:pointer}.lesson5-action span:last-child{font-size:12px}
+.lesson5-scene .sim-actor{pointer-events:none;z-index:9!important}
+@media(max-width:780px){.lesson5-scene .lesson5-spot{min-width:53px;max-width:79px}.lesson5-spot-tag{font-size:8px;padding:2px 3px}.lesson5-spot-num{width:24px;height:24px;font-size:9px}.lesson5-scene .lesson5-room-label{font-size:10px;left:7px;top:6px;padding:4px 6px}.lesson5-action{min-height:51px}.sim-choices{grid-template-columns:1fr!important}}
+
+/* v0.5.1: true interactive SVG outlines + new Lesson-5 seller/customer avatars */
+.parts{grid-template-columns:repeat(6,minmax(0,1fr));gap:5px}
+.parts .part{padding:7px 8px;font-size:10px;min-height:54px}
+.parts .part strong{font-size:10px;margin-bottom:3px}
+.lesson5-scene{position:relative;isolation:isolate}
+.lesson5-scene .scene-photo{filter:saturate(1.03) contrast(1.03)!important;transform:none!important;background-size:100% 100%!important;animation:none!important}
+.lesson5-object-map{position:absolute;z-index:5;inset:0;width:100%;height:100%;overflow:visible}
+.lesson5-object-outline{fill:rgba(11,170,200,.015);stroke:rgba(252,233,157,.57);stroke-width:2.5;stroke-dasharray:9 6;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke;cursor:pointer;pointer-events:visiblePainted;transition:stroke .14s,fill .14s,filter .14s}
+.lesson5-object-outline:hover,.lesson5-object-outline.hovered,.lesson5-object-outline.selected,.lesson5-object-outline:focus-visible{fill:rgba(0,202,223,.09);stroke:#ffe45d;stroke-width:4;filter:drop-shadow(0 0 5px #003c7c)}
+.lesson5-object-outline.selected{stroke:#25ffe1;stroke-width:4;stroke-dasharray:8 5}
+.lesson5-object-outline.completed:not(.selected){stroke:#80ffd0}
+.lesson5-scene .lesson5-spot{z-index:7;min-width:0!important;max-width:112px;gap:2px;transform:translate(-50%,0)}
+.lesson5-scene .lesson5-spot .lesson5-spot-num{height:22px;width:22px;font-size:10px;background:#155276f5;box-shadow:0 1px 3px #002d57a6}
+.lesson5-scene .lesson5-spot .lesson5-spot-tag{opacity:0;transform:translateY(-5px);pointer-events:none;transition:opacity .1s,transform .1s;background:#fffffff7;color:#063b57;max-width:112px;border:1px solid #39adcd;box-shadow:0 2px 10px #032c42ad}
+.lesson5-scene .lesson5-spot:hover .lesson5-spot-tag,.lesson5-scene .lesson5-spot.hovered .lesson5-spot-tag,.lesson5-scene .lesson5-spot.active .lesson5-spot-tag,.lesson5-scene .lesson5-spot:focus-visible .lesson5-spot-tag{opacity:1;transform:none}
+.lesson5-scene .lesson5-room-label{z-index:9;left:10px;top:8px;max-width:300px;font-size:12px;padding:6px 9px}
+.lesson5-persona{position:absolute;z-index:10;display:flex;flex-direction:column;align-items:center;gap:1px;pointer-events:none;transform:translate(-50%,-50%);transition:left .8s ease-in-out,top .8s ease-in-out}
+.lesson5-persona img{display:block;width:53px;height:68px;object-fit:cover;object-position:50% 26%;border:3px solid #d5fafe;border-radius:14px 14px 21px 21px;box-shadow:0 4px 14px #073a53bd}
+.lesson5-persona strong{padding:2px 7px;font-size:10px;color:#fff;border-radius:9px;background:#084969d9;white-space:nowrap}
+.lesson5-persona.seller{left:12%;top:83%}
+.lesson5-persona.buyer{left:92%;top:83%}
+.lesson5-persona.buyer img{border-color:#ffdb8a}
+.lesson5-persona.walking img{animation:lesson5ActorHop .25s ease-in-out infinite alternate}
+@keyframes lesson5ActorHop{to{transform:translateY(-4px) rotate(2deg)}}
+.lesson5-scene .sim-bubble.lesson5-dialogue{z-index:11;left:20%;bottom:3%;max-width:60%;padding:7px 10px;font-size:11px;min-height:0}
+.lesson5-scene .sim-bubble.lesson5-dialogue::before{left:55%}
+@media(max-width:1050px){.parts{grid-template-columns:repeat(3,1fr)}.parts .part{min-height:42px}.lesson5-scene .lesson5-spot .lesson5-spot-tag{font-size:8px}}
+@media(max-width:780px){.parts{grid-template-columns:repeat(2,1fr)}.lesson5-persona img{width:30px;height:42px;border-width:2px}.lesson5-persona strong{font-size:7px}.lesson5-scene .sim-bubble.lesson5-dialogue{left:18%;max-width:64%;font-size:8px}.lesson5-object-outline{stroke-width:3.4}.lesson5-scene .lesson5-spot .lesson5-spot-num{width:17px;height:17px;font-size:8px}}
+
+/* Laptop height regression: expose role-play controls below image without scrolling past a second header. */
+@media(min-width:781px){
+ .sim-subnav{margin:1px 0!important;gap:4px!important}
+ .sim-subnav button{padding:4px 11px!important;font-size:11px}
+ .sim-hero{height:53px!important;min-height:53px!important;padding:4px 12px!important;border-radius:7px!important}
+ .sim-hero .sim-kicker{display:none!important}
+ .sim-hero h2{font-size:17px!important;margin:0 0 1px!important}
+ .sim-hero p{font-size:10px!important;margin:0!important}
+ .field-practice-nav{padding:3px 8px!important;gap:5px!important;min-height:33px!important}
+ .field-practice-nav button{padding:4px 7px!important;font-size:10px!important}
+ .sim-stage-head{padding:6px 10px!important}
+ .sim-stage-tools>button{padding:5px 8px!important}
+ .sim-stage .paper-real.sim-scene{width:min(100%,760px)!important;max-width:760px!important;margin:5px auto 3px!important}
+ .sim-grid{gap:7px!important}
+}
+/* Lesson 5 mobile regression: avoid hidden sideways-only room/mission selectors. */
+@media(max-width:780px){
+ .sim-grid{display:flex!important;flex-direction:column!important;min-width:0!important;gap:8px!important}
+ .sim-locations{width:100%!important;min-width:0!important;padding:9px!important;overflow:visible!important}
+ .sim-rooms{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;overflow:visible!important;scroll-snap-type:none!important}
+ .sim-rooms .sim-room{display:flex!important;align-items:center!important;min-width:0!important;width:100%!important;max-width:100%!important;min-height:56px!important;height:auto!important;padding:5px 6px!important}
+ .sim-room .r-label{flex:1!important;min-width:0!important}
+ .sim-room .r-label b{font-size:10px!important;white-space:normal!important;line-height:1.25!important}
+ .sim-room .meter{font-size:9px!important}
+ .sim-commands{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;overflow:visible!important;scroll-snap-type:none!important}
+ .sim-commands .sim-cmd{width:100%!important;min-width:0!important;min-height:65px!important;white-space:normal!important}
+ .sim-stage{min-width:0!important;width:100%!important}
+ .sim-stage .paper-real.sim-scene{width:100%!important;max-width:100%!important;aspect-ratio:1672/941!important;height:auto!important;min-height:0!important}
+ .lesson5-scene .lesson5-spot .lesson5-spot-num{width:25px!important;height:25px!important;font-size:9px!important}
+ .sim-hero{gap:8px;padding:10px!important;align-items:start!important}
+ .sim-hero h2{font-size:15px!important}
+ .sim-hero-stats{min-width:80px!important;font-size:10px!important}
+}

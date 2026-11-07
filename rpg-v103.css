@@ -1,0 +1,63 @@
+/* KAFV Lesson 5 v1.0.3 - scoped structural upgrade from the approved UI. */
+#simulator-screen.gv-v100-ready .sim-grid{grid-template-columns:clamp(212px,15vw,265px) minmax(0,1fr) clamp(215px,15vw,258px)!important;gap:9px!important;align-items:start!important}
+#simulator-screen.gv-v100-ready .sim-locations{grid-column:1;min-width:0!important;box-shadow:0 4px 12px #1b49611c!important}
+#simulator-screen.gv-v100-ready .sim-stage{grid-column:2;width:100%!important;min-width:0!important}
+#simulator-screen.gv-v100-ready .gv-output-report{grid-column:3;position:sticky;top:8px;align-self:start;max-height:calc(100vh - 135px);overflow:auto;z-index:3;background:#f5faf9;border:2px solid #8bb7c0;border-radius:11px;box-shadow:0 3px 12px #1c4b511c;color:#153b4c;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif}
+.gv-output-report>header{padding:12px 13px;background:linear-gradient(110deg,#155e77,#0a7680);color:white;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px}
+.gv-output-report header b{font-size:15px}.gv-output-report header small{font-size:10px;color:#c9f1ef}
+.gv-output-content{padding:10px}.gv-report-status{font-weight:850;font-size:12px;text-align:center;background:#e2f4ef;border-radius:7px;padding:8px;line-height:1.5;margin-bottom:8px}
+.gv-report-row{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;padding:9px 4px;border-bottom:1px solid #d7e5e5;font-size:11px}
+.gv-report-row span{color:#537481;flex:0 0 38%}.gv-report-row strong{font-size:11px;text-align:right;word-break:keep-all;overflow-wrap:anywhere}
+.gv-report-head{font-weight:850;font-size:12px;margin:14px 0 5px;padding-bottom:5px;border-bottom:2px solid #84abb5}
+.gv-report-log{padding:2px 0 2px 20px;max-height:170px;overflow:auto;font-size:10px;line-height:1.7;margin:0 0 8px;color:#456477}
+.gv-output-action{display:block;width:100%;border:1px solid #3a9299;border-radius:8px;background:#07827d;color:white;font-weight:800;padding:9px 4px;margin-top:6px;cursor:pointer;font-size:11px}
+.gv-output-action.ghost{background:#e6f5f2;color:#10656e}.gv-output-action:disabled{cursor:not-allowed;opacity:.45}
+.gv-output-warning{font-size:10px;line-height:1.55;color:#6b7c84;padding:6px 2px;margin:7px 0 0}
+/* The game world is scaled only inside the central stage, never the side controllers. */
+.gv-root .gv-viewport{min-height:0!important;overflow:hidden!important}.gv-root .gv-world{background:#f1f4eb;isolation:isolate!important}
+.gv-shop-bg{pointer-events:none}.gv-actor{transition:none!important;will-change:left,top;backface-visibility:hidden;filter:drop-shadow(0 4px 3px #1e363c52)!important}
+.gv-actor img{animation:none!important;transition:transform .08s linear!important;backface-visibility:hidden}
+.gv-actor.walking img,.gv-actor.gesturing img,.gv-actor.gv-in-motion img{animation:none!important}
+.gv-customer{width:121px!important;height:243px!important}.gv-customer img{height:219px!important}
+.gv-seller{width:156px!important;height:220px!important}.gv-seller img{height:198px!important;max-width:100%!important}
+.gv-actor .gv-role{font-size:10px!important;padding:2px 7px!important;border-width:1.5px!important}
+.gv-actor .gv-bubble{max-width:188px!important;min-width:115px!important;font-size:11px!important;font-weight:740!important;line-height:1.36!important;padding:7px 8px!important;border-radius:12px!important;border-width:2px!important;box-shadow:0 3px 9px #27465b55!important}
+.gv-seller .gv-bubble{max-width:196px!important;min-width:135px!important}.gv-actor .gv-bubble:after{bottom:-9px!important;border-left-width:8px!important;border-right-width:8px!important;border-top-width:9px!important}
+.gv-actor .gv-npc-hit{left:calc(50% - 30px)!important;width:60px!important;height:84px!important}
+.gv-floorcaption{font-size:11px!important;padding:5px 10px!important;left:490px!important;top:769px!important}
+.gv-focuspanel{width:280px!important;max-height:355px!important}.gv-focuspanel header strong{font-size:13px!important}.gv-focuspanel nav button{font-size:9px!important}
+.gv-product{width:89px!important;height:70px!important;padding:3px!important;border-width:2px!important}
+.gv-producttitle{font-size:14px!important}.gv-prodspec{font-size:9px!important;line-height:1.16!important}.gv-stockbadge{font-size:9px!important}
+.gv-product-0{left:122px!important;top:521px!important}.gv-product-1{left:224px!important;top:521px!important}.gv-product-2{left:326px!important;top:521px!important}
+.gv-scale{left:493px!important;top:560px!important;width:183px!important;min-height:80px!important}
+.gv-scale em{font-size:14px!important;min-width:100px!important}.gv-scale strong{font-size:14px!important}
+.gv-packing{left:1226px!important;top:580px!important;width:141px!important;height:48px!important;z-index:9!important}
+.gv-checkout{left:1409px!important;top:608px!important;width:181px!important;min-height:70px!important;z-index:9!important}
+.gv-traceboard{transform:scale(.88);transform-origin:top left}
+.gv-store-sign{height:101px!important;top:13px!important}.gv-store-sign b{font-size:41px!important}.gv-store-sign small{font-size:13px!important}.gv-sea-icon{font-size:34px!important}
+.gv-harbor-action{position:absolute;z-index:5;left:650px;top:158px;background:#0c6779;color:#fff;border:2px solid #fff2cb;border-radius:10px;padding:13px 19px;font-size:21px;font-weight:900;box-shadow:0 5px 14px #14374988;opacity:0;transform:translateY(10px)}
+.gv-harbor-action.active{animation:gv-harbor-action-show 1.6s ease-out forwards}
+@keyframes gv-harbor-action-show{0%{opacity:0;transform:translateY(10px)}20%,78%{opacity:1;transform:translateY(0)}100%{opacity:.6;transform:translateY(0)}}
+.gv-harbor-animated-lot{transition:transform 1.25s cubic-bezier(.22,.73,.27,1),opacity .75s!important}
+.gv-mooring-line{transition:opacity .65s,transform .65s}
+/* Central scene remains primary on smaller displays; report shifts below. */
+@media(max-width:1540px){
+ #simulator-screen.gv-v100-ready .sim-grid{grid-template-columns:225px minmax(0,1fr)!important}
+ #simulator-screen.gv-v100-ready .sim-stage{grid-column:2}
+ #simulator-screen.gv-v100-ready .gv-output-report{grid-column:2;position:static;max-height:none;overflow:visible}
+ .gv-output-content{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px 12px}
+ .gv-output-report .gv-report-status{grid-column:1/-1}.gv-output-report .gv-report-head{grid-column:1/-1}.gv-output-report .gv-report-log{grid-column:1/-1}
+ .gv-output-report .gv-output-warning{grid-column:1/-1}
+}
+@media(max-width:700px){
+ #simulator-screen.gv-v100-ready .sim-grid{display:block!important}
+ #simulator-screen.gv-v100-ready .sim-locations{position:relative!important;max-height:150px!important;margin-bottom:6px!important}
+ #simulator-screen.gv-v100-ready .gv-output-report{margin-top:10px}
+ .gv-output-content{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* Fullscreen keeps the three-workspace layout intact. */
+#simulator-screen.gv-v100-ready .sim-grid:fullscreen{background:#e8f2f3;overflow:auto;align-content:start;padding:9px!important;width:100vw!important;max-width:100vw!important;height:100vh!important;gap:10px!important}
+#simulator-screen.gv-v100-ready .sim-grid:fullscreen .sim-locations,
+#simulator-screen.gv-v100-ready .sim-grid:fullscreen .gv-output-report{max-height:calc(100vh - 25px)!important;top:8px}
+#simulator-screen.gv-v100-ready .sim-grid:fullscreen .sim-stage{align-self:start}

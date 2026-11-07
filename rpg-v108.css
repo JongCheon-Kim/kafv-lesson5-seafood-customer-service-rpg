@@ -1,0 +1,73 @@
+/* v1.0.8: accepted v1.0.6 illustration/boat intact; only relative placement and supply UI. */
+.gv106-harbor .gv106-vessel{left:65px!important}
+.gv106-harbor[data-animating="1"] .gv106-vessel,.gv106-harbor[data-stage]:not([data-stage="0"]) .gv106-vessel{left:265px!important}
+.gv106-harbor .gv106-wake{left:30px}.gv106-harbor[data-animating="1"] .gv106-wake,.gv106-harbor[data-stage]:not([data-stage="0"]) .gv106-wake{left:310px}
+.gv106-rope{left:751px;top:518px}.gv106-harbor[data-animating="2"] .gv106-rope,.gv106-harbor[data-stage="2"] .gv106-rope,.gv106-harbor[data-stage="3"] .gv106-rope,.gv106-harbor[data-stage="4"] .gv106-rope,.gv106-harbor[data-stage="5"] .gv106-rope,.gv106-harbor[data-stage="6"] .gv106-rope{width:140px}
+/* Remove the floating pseudo cargo whose screen coordinates did not match a lifting hook. */
+.gv106-transportCrate{display:none!important}
+/* A visible inspection workbench, not a tiny floating label. */
+.gv106-inspectionBooth{left:1215px;top:355px;width:215px;height:135px;z-index:9}
+.gv106-inspectionBooth>span{font-size:17px;padding:8px}
+.gv106-record{font-size:15px;line-height:1.7}
+.gv106-inspect{left:1235px;top:505px;font-size:14px}
+/* Larger cargo warehouse gate, but stays inside the right margin. */
+.gv106-storage{left:1430px;top:265px;width:212px;height:215px;z-index:8}
+.gv106-storage span{font-size:17px;padding:9px}
+.gv106-storageDoor{top:43px;left:14px;right:14px;bottom:11px}
+.gv106-storedBoxes{top:115px;left:33px}
+.gv106-warehouseBtn{left:1452px;top:494px;max-width:170px;min-width:150px;font-size:12px!important;white-space:nowrap;line-height:1.1;padding:7px 8px;min-height:36px}
+.gv106-cartBtn{left:1077px;top:617px}
+.gv106-unload{left:893px;top:579px}
+.gv106-lift{left:668px;top:342px}
+.gv106-harbor[data-animating="3"] .gv106-lift{transform:translate(325px,205px)}
+.gv106-harbor[data-stage="3"] .gv106-lift,.gv106-harbor[data-stage="4"] .gv106-lift,.gv106-harbor[data-stage="5"] .gv106-lift,.gv106-harbor[data-stage="6"] .gv106-lift{transform:translate(325px,205px)}
+/* The existing boat carries its own lifting arm. Make the crane transfer visually explicit. */
+.gv106-harbor .gv106-liftbox{box-shadow:0 10px 16px #073c5477}
+/* Separate logistics entry above storage rather than the far-left entrance. */
+.gv108-store-supply{position:absolute;z-index:24;top:164px;left:917px;width:336px;max-width:336px;min-height:49px;border:2px solid #d3f2eb;border-radius:12px;background:linear-gradient(90deg,#075d70,#11909a);box-shadow:0 8px 14px #17394770;color:white;font-size:16px;font-weight:900;white-space:nowrap;cursor:pointer}
+.gv108-store-supply:hover,.gv108-port-supply:hover{background:#0e6c8a}
+.gv-gear-shop .gv108-store-supply{left:1040px;top:215px}
+.gv108-port-supply{position:absolute;z-index:19;top:110px;right:25px;width:240px;background:#0c6178e6;color:white;padding:12px 15px;border-radius:11px;border:2px solid #c5e9ec;box-shadow:0 5px 11px #092a4977;font-weight:800;cursor:pointer;font-size:15px}
+.gv108-port-supply.ready{background:#128568;border-color:#f4d979}
+/* Drop-down based supply interface in one compact dialog. */
+.gv108-supply-panel{position:absolute;z-index:65;top:90px;right:30px;width:580px;max-height:638px;display:flex;flex-direction:column;background:#f5fbfa;color:#1b4961;border:3px solid #1d7082;border-radius:16px;box-shadow:0 18px 32px #092b407c;overflow:hidden}
+.gv108-supply-panel header{background:linear-gradient(90deg,#0a506a,#148c93);color:white;display:flex;align-items:center;justify-content:space-between;padding:11px 16px;font-size:19px;flex:none}
+.gv108-supply-panel header .gv108-close{border:0;background:transparent;color:white;font-size:25px;cursor:pointer;padding:0 6px}
+.gv108-body{overflow-y:auto;overscroll-behavior:contain;padding:15px 17px 17px;scrollbar-width:thin}
+.gv108-help{font-size:13px;color:#416c7d;margin:0 0 12px;line-height:1.45}
+.gv108-form{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.gv108-form label{font-size:12px;font-weight:850;display:flex;flex-direction:column;gap:5px;color:#275365}
+.gv108-form label:nth-child(3),.gv108-form label:nth-child(4){grid-column:auto}
+.gv108-form label:nth-child(5){grid-column:span 2}
+.gv108-form select,.gv108-form input,.gv108-destination{display:block;width:100%;box-sizing:border-box;height:40px;border:1px solid #95bdc2;border-radius:9px;padding:6px 11px;background:white;color:#143d52;font-size:14px;font-family:inherit}
+.gv108-destination{background:#e7f5f2;display:flex;align-items:center}
+.gv108-stock{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:14px 0}
+.gv108-stock div{background:#e0f0ed;border-radius:10px;padding:10px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.gv108-stock span{font-size:11px;color:#466c76}.gv108-stock strong{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gv108-execute{display:block;width:100%;background:#08798b;border-radius:10px;border:0;color:#fff;padding:13px;font-size:16px;font-weight:850;cursor:pointer}
+.gv108-execute:disabled{opacity:.5;cursor:default}
+.gv108-warning{color:#a14720;font-size:12px;margin:9px 0}
+.gv108-ledger{margin-top:12px;border-top:1px solid #b0d3d1;padding-top:10px;font-size:12px}.gv108-ledger>strong{font-size:13px}.gv108-ledger p{margin:4px 0;color:#53717b}
+.gv108-transfer{position:absolute;z-index:38;left:670px;top:550px;padding:8px 12px;border-radius:9px;background:#fff0bd;border:2px solid #f8dc8e;color:#194f61;font-size:15px;font-weight:800;pointer-events:none;transition:transform 1.15s,opacity 1.15s}
+.gv108-transfer-store.travelling{transform:translate(230px,45px);opacity:0}.gv108-transfer-warehouse.travelling{transform:translate(760px,-90px);opacity:0}
+.gv108-transfer-cold.travelling{transform:translate(310px,-110px);opacity:0}.gv108-transfer-freezer.travelling{transform:translate(470px,-110px);opacity:0}
+.gv-cabinet-door.open .gv-glassdoor{pointer-events:none}
+.gv-cabinet-door.open .gv-inner-shelf,.gv-cabinet-door.open .gv-storedproduct{pointer-events:auto;cursor:pointer}
+
+/* Mechanical quay crane: fixed boom on quay + travelling trolley & suspended cargo. */
+.gv108-quay-crane{position:absolute;z-index:6;left:1031px;top:325px;width:48px;height:282px;pointer-events:none;filter:drop-shadow(3px 7px 3px #0f405877)}
+.gv108-crane-pillar{position:absolute;left:20px;top:0;width:23px;height:267px;background:repeating-linear-gradient(0deg,#e9c777 0 25px,#b68b37 26px 31px);border:3px solid #795f2d;box-sizing:border-box}
+.gv108-crane-base{position:absolute;left:-18px;bottom:0;width:105px;height:23px;background:linear-gradient(90deg,#697e81,#b8c9c7);border:3px solid #547078;border-radius:6px}
+.gv108-crane-boom{position:absolute;right:4px;top:-11px;width:394px;height:23px;background:repeating-linear-gradient(110deg,#f2ca6c 0 37px,#d39f45 38px 43px);border:3px solid #936d32;border-radius:4px;box-sizing:border-box;box-shadow:inset 0 5px #f8de95}
+.gv108-crane-boom:before{content:'';position:absolute;left:0;top:3px;right:3px;height:3px;background:#685b43}
+.gv108-crane-carriage{position:absolute;top:-14px;left:-370px;width:42px;height:33px;border:4px solid #485c64;border-radius:8px;background:linear-gradient(#d4dcdc,#8ba5a9);transition:transform 1.5s ease}
+.gv106-harbor[data-animating="3"] .gv108-crane-carriage{transform:translateX(295px)}
+.gv106-harbor .gv106-lift{left:657px;top:437px;opacity:0;z-index:9}
+.gv106-harbor[data-animating="3"] .gv106-lift{opacity:1;animation:gv108-mechanical-unload 1.7s cubic-bezier(.28,.7,.45,1) forwards;transition:none}
+@keyframes gv108-mechanical-unload{0%{transform:translate(0,0)}28%{transform:translate(0,-110px)}62%{transform:translate(302px,-110px)}100%{transform:translate(302px,106px)}}
+.gv106-harbor[data-animating="3"] .gv106-hook{animation:gv108-hoistline 1.7s ease-in-out forwards}
+@keyframes gv108-hoistline{0%{top:-97px;height:111px}28%{top:-10px;height:24px}62%{top:-12px;height:26px}100%{top:-215px;height:230px}}
+.gv106-harbor[data-stage="3"] .gv106-lift,.gv106-harbor[data-stage="4"] .gv106-lift,.gv106-harbor[data-stage="5"] .gv106-lift,.gv106-harbor[data-stage="6"] .gv106-lift{opacity:0!important;animation:none!important}
+
+/* Avoid repetitive training labels on product cards; one concise footer disclaimer remains. */
+.gv-product .gv-prodspec small,.gv-focuspanel header strong small{display:none!important}

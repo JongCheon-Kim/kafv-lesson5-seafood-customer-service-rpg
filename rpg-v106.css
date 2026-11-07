@@ -1,0 +1,62 @@
+/* KAFV v1.0.6 | Independent accepted graphics and physical harbor behavior */
+.gv-sfx-button{border:1px solid #7ccace!important;background:#e7f7f5!important;color:#155870!important;font-size:11px!important}
+.gv106-harbor{position:absolute;inset:0;width:1672px;height:800px;overflow:hidden;background:url('game-art/kafv_harbor_sunlit.webp') center center/100% 100% no-repeat;isolation:isolate;color:#fff;font-family:'Noto Sans KR',system-ui,sans-serif;user-select:none}
+.gv106-harbor button{font-family:inherit;touch-action:manipulation;outline-offset:3px}
+.gv106-sea{position:absolute;left:0;right:0;top:200px;height:310px;pointer-events:none;z-index:1;background:repeating-linear-gradient(172deg,transparent 0 32px,#b3f1ff12 36px 38px,transparent 41px 57px);mix-blend-mode:screen;animation:gv106-sea 9s linear infinite}
+@keyframes gv106-sea{to{background-position:0 42px}}
+.gv106-top{position:absolute;z-index:12;top:18px;left:22px;right:20px;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;pointer-events:none}
+.gv106-top>div{padding:11px 17px;background:#093e5dcf;border:2px solid #d7f7fbdd;box-shadow:0 4px 12px #1a415a77;border-radius:12px;max-width:640px}
+.gv106-top h2{margin:0 0 4px;font-size:24px;letter-spacing:-.02em}.gv106-top p{margin:0;font-size:12px;color:#e3f5f6;line-height:1.35}
+.gv106-reset{pointer-events:auto;border:1px solid #d9ebef;background:#0b5b70ef;border-radius:9px;color:white;font-weight:700;font-size:15px;padding:10px 15px;cursor:pointer}
+.gv106-reset:hover{background:#127f91}
+.gv106-vessel{position:absolute;z-index:5;left:-26px;top:297px;width:655px;height:286px;padding:0;border:0;background:none!important;box-shadow:none!important;cursor:pointer;transform-origin:50% 85%;filter:drop-shadow(2px 14px 11px #103f566c);transition:left 2.12s cubic-bezier(.16,.68,.25,1),top .8s ease}
+.gv106-vessel img{position:absolute;left:0;top:0;display:block;width:100%;height:266px;object-fit:contain;object-position:center;pointer-events:none;animation:gv106-boatbob 4.1s ease-in-out infinite}
+@keyframes gv106-boatbob{0%,100%{transform:translateY(0) rotate(.2deg)}50%{transform:translateY(-5px) rotate(-.25deg)}}
+.gv106-vesselname{position:absolute;left:180px;bottom:-1px;padding:7px 12px;border-radius:9px;background:#0b5b77e8;border:2px solid #d7ffff;color:#f6ffff;font-size:14px;font-weight:800;white-space:nowrap;box-shadow:0 2px 7px #062b4380}
+.gv106-vessel:focus-visible .gv106-vesselname,.gv106-vessel:hover .gv106-vesselname{background:#0085ac}
+.gv106-harbor[data-animating="1"] .gv106-vessel,.gv106-harbor[data-stage]:not([data-stage="0"]) .gv106-vessel{left:178px}
+.gv106-wake{position:absolute;z-index:2;left:30px;top:533px;width:470px;height:44px;border-radius:50%;background:radial-gradient(ellipse,#f4ffff96,#a1ffff26 52%,transparent 75%);filter:blur(5px);opacity:.5;transition:left 2s}
+.gv106-harbor[data-animating="1"] .gv106-wake,.gv106-harbor[data-stage]:not([data-stage="0"]) .gv106-wake{left:210px}
+.gv106-rope{position:absolute;left:655px;top:522px;width:0;height:4px;background:linear-gradient(#e8d29a,#a18a56);z-index:7;transform-origin:left;transform:rotate(-13deg);transition:width .75s ease;box-shadow:0 2px 3px #051d3170}
+.gv106-harbor[data-animating="2"] .gv106-rope,.gv106-harbor[data-stage="2"] .gv106-rope,.gv106-harbor[data-stage="3"] .gv106-rope,.gv106-harbor[data-stage="4"] .gv106-rope,.gv106-harbor[data-stage="5"] .gv106-rope,.gv106-harbor[data-stage="6"] .gv106-rope{width:255px}
+.gv106-object{position:absolute;z-index:9;border:2px solid #bbe9ef;background:#0c4c68e8;color:#fff;font-size:14px;font-weight:850;line-height:1.2;padding:10px 12px;min-height:42px;border-radius:10px;box-shadow:0 6px 10px #163d4a77;cursor:pointer;transition:background .2s,border-color .2s}
+.gv106-object:not(:disabled):hover{background:#017f99;border-color:#fff}
+.gv106-object:disabled{opacity:.62;cursor:not-allowed;filter:grayscale(.3)}
+.gv106-dock{left:775px;top:492px}.gv106-unload{left:860px;top:579px}.gv106-cartBtn{left:1094px;top:599px}.gv106-inspect{left:1263px;top:485px}.gv106-warehouseBtn{left:1430px;top:442px}
+.gv106-lift{position:absolute;z-index:8;left:592px;top:323px;width:156px;height:126px;pointer-events:none;opacity:0;transform:translate(0,0);transition:transform 1.7s cubic-bezier(.28,.70,.4,1),opacity .25s}
+.gv106-hook{position:absolute;left:75px;top:-95px;width:4px;height:109px;background:linear-gradient(90deg,#e1e1d4,#8d9fa6);transform-origin:top}
+.gv106-hook:after{content:'⌄';position:absolute;bottom:-9px;left:-5px;color:#e4e5cf;font-size:25px}
+.gv106-liftbox{position:absolute;left:0;top:0;width:150px;height:88px;border:3px solid #5c7582;border-radius:8px;background:linear-gradient(160deg,#edf3f4 0 36%,#bfcdd1 37% 52%,#eaf0ed 53%);box-shadow:0 10px 14px #183b4d6c;display:flex;gap:5px;padding:9px;justify-content:center;align-items:center}
+.gv106-liftbox i,.gv106-cargoStack i,.gv106-storedBoxes i{display:block;width:32px;height:39px;background:linear-gradient(130deg,#f9fbf7,#c4d1cf);border:2px solid #7f9c9d;box-shadow:inset 0 2px #fff}
+.gv106-liftbox small{position:absolute;bottom:4px;left:10px;color:#21536b;font-size:9px;font-weight:800}
+.gv106-harbor[data-animating="3"] .gv106-lift{opacity:1;transform:translate(394px,199px)}
+.gv106-harbor[data-stage="3"] .gv106-lift,.gv106-harbor[data-stage="4"] .gv106-lift,.gv106-harbor[data-stage="5"] .gv106-lift,.gv106-harbor[data-stage="6"] .gv106-lift{opacity:0;transform:translate(394px,199px)}
+.gv106-cartSprite{position:absolute;z-index:8;left:996px;top:555px;width:155px;height:100px;pointer-events:none;transition:left 1.65s ease-in-out}
+.gv106-cargoStack{position:absolute;bottom:35px;left:24px;width:104px;height:45px;display:flex;gap:5px;opacity:0;transition:opacity .2s}
+.gv106-cartDeck{position:absolute;bottom:28px;left:14px;width:132px;height:12px;border-radius:4px;background:linear-gradient(#7e96a1,#275d73);transform:skewX(-12deg);border:2px solid #e0eae8}
+.gv106-cartDeck:before{content:'';position:absolute;left:0;top:-40px;width:7px;height:44px;border-radius:5px;background:#becbd1}
+.gv106-wheel{position:absolute;bottom:7px;width:30px;height:30px;border-radius:50%;background:#213842;border:7px solid #65888b;box-shadow:inset 0 0 0 2px #c9d3d1}.gv106-wheel.a{left:35px}.gv106-wheel.b{right:24px}
+.gv106-harbor[data-animating="4"] .gv106-cartSprite,.gv106-harbor[data-stage="4"] .gv106-cartSprite,.gv106-harbor[data-stage="5"] .gv106-cartSprite,.gv106-harbor[data-stage="6"] .gv106-cartSprite{left:1230px}
+.gv106-harbor[data-animating="4"] .gv106-cargoStack,.gv106-harbor[data-stage="4"] .gv106-cargoStack,.gv106-harbor[data-stage="5"] .gv106-cargoStack,.gv106-harbor[data-stage="6"] .gv106-cargoStack{opacity:1}
+.gv106-worker{position:absolute;left:1129px;top:530px;z-index:8;font-size:44px;pointer-events:none;transition:left 1.65s ease-in-out}
+.gv106-harbor[data-animating="4"] .gv106-worker,.gv106-harbor[data-stage="4"] .gv106-worker,.gv106-harbor[data-stage="5"] .gv106-worker,.gv106-harbor[data-stage="6"] .gv106-worker{left:1364px}
+.gv106-inspectionBooth{position:absolute;left:1288px;top:363px;z-index:7;width:159px;height:94px;border:3px solid #608398;background:#f3f3e8e8;color:#154d69;border-radius:8px;font-weight:800;box-shadow:0 6px 9px #082e4661;text-align:center;padding-top:6px;pointer-events:none}
+.gv106-inspectionBooth>span{display:block;background:#196d86;color:white;margin:-6px -1px 4px;padding:5px}.gv106-record{font-size:13px;line-height:1.5}
+.gv106-harbor[data-stage="5"] .gv106-record,.gv106-harbor[data-stage="6"] .gv106-record{color:#126a50}.gv106-harbor[data-stage="5"] .gv106-record::after,.gv106-harbor[data-stage="6"] .gv106-record::after{content:' ✓ 검수 완료';display:block;font-weight:900;color:#118354}
+.gv106-storage{position:absolute;left:1490px;top:287px;width:135px;height:155px;border-radius:4px 4px 2px 2px;background:linear-gradient(110deg,#dfebee,#8da9b6);border:4px solid #517488;z-index:6;color:#123e57;text-align:center;font-weight:900;box-shadow:0 10px 10px #062b4980;overflow:hidden;pointer-events:none}
+.gv106-storage span{display:block;background:#184f6b;color:white;padding:5px;font-size:13px}.gv106-storageDoor{position:absolute;top:28px;left:12px;right:12px;bottom:7px;background:repeating-linear-gradient(0deg,#a4c3ca 0 5px,#cfeced 7px 24px);border:2px solid #6a8797;transform-origin:left center;transition:transform 1.3s ease}
+.gv106-harbor[data-animating="6"] .gv106-storageDoor,.gv106-harbor[data-stage="6"] .gv106-storageDoor{transform:perspective(240px) rotateY(-74deg)}
+.gv106-storedBoxes{position:absolute;left:25px;top:69px;display:flex;gap:1px;opacity:0;transition:opacity .5s}.gv106-harbor[data-stage="6"] .gv106-storedBoxes{opacity:1}
+.gv106-transportCrate{position:absolute;left:1400px;top:562px;z-index:7;background:linear-gradient(135deg,#f4f5f0,#b3c3c7);border:3px solid #527585;color:#1d5068;border-radius:5px;padding:8px;font-size:11px;font-weight:800;box-shadow:0 4px 6px #152d4380;opacity:0;pointer-events:none;transition:opacity .2s,top 1.4s,left 1.4s,transform 1.4s}
+.gv106-harbor[data-animating="6"] .gv106-transportCrate{opacity:1;top:385px;left:1530px;transform:scale(.65)}
+.gv106-harbor[data-stage="6"] .gv106-transportCrate{opacity:0;top:385px;left:1530px;transform:scale(.65)}
+.gv106-dockline{position:absolute;z-index:2;left:0;top:586px;width:100%;height:3px;background:linear-gradient(90deg,transparent,#f6e6ad77 60%,transparent);pointer-events:none}
+.gv106-bottom{position:absolute;left:16px;right:16px;bottom:13px;z-index:20;background:#083b59e8;border:2px solid #c6edf3b0;box-shadow:0 5px 10px #183b4c8a;border-radius:12px;padding:9px 12px 8px;display:flex;flex-direction:column;gap:6px}
+.gv106-progressLabel{font-size:16px;font-weight:850;line-height:1.2}.gv106-stagebar{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px}
+.gv106-step{background:#e6f3f3ee;color:#14516a;border:2px solid #bcdbe3;border-radius:8px;min-height:46px;padding:5px;font-size:13px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px}
+.gv106-step:disabled{opacity:.65;cursor:not-allowed}.gv106-step.current{background:#fff0c6;border-color:#eab752}.gv106-step.done{background:#d7f7e8;color:#116044;border-color:#62b89a}
+.gv106-icon{font-size:22px}.gv106-stageinfo{font-size:12px;color:#daedf1;line-height:1.4;min-height:18px}
+@media(prefers-reduced-motion:reduce){.gv106-sea,.gv106-vessel img{animation:none!important}}
+
+/* The harbor owns its six-step status bar; hide the legacy duplicate while at sea. */
+.gv-app:has(.gv106-harbor) .gv-bottom{display:none!important}

@@ -1,0 +1,66 @@
+/* v1.0.10: DOOR + BUY controls anchored to real shop objects. */
+/* Never render the former duplicated row. Game viewport regains its full height. */
+.gv109-routebar{display:none!important}
+/* One consistent, tiny action on the actual physical LEFT GLASS DOOR. */
+.gv-world .gv109-door-click.gv110-door{z-index:9;left:80px;top:302px;width:128px;height:178px;
+  background:transparent;border:2px solid transparent;border-radius:5px;box-shadow:none;
+  overflow:visible;cursor:pointer;pointer-events:auto}
+.gv-world .gv109-door-click.gv110-door:hover,
+.gv-world .gv109-door-click.gv110-door:focus-visible{border:2px solid #84f3ce;
+  background:#69e0c014;outline:2px solid #f5df96;outline-offset:0}
+.gv-world .gv110-door .gv110-exit-label{position:absolute;top:38px;left:7px;right:7px;
+  display:block;padding:5px 4px;background:#08735fe8;color:#fff;
+  border:1px solid #d6f7e9;border-radius:6px;box-shadow:0 2px 5px #1b343860;
+  text-align:center;font-size:11px;line-height:1.1;font-weight:800;white-space:nowrap;pointer-events:none}
+/* Gear shop has its own drawn glass entrance, not the seafood-photo glass door. */
+.gv-world.gv-gear-shop .gv109-door-click.gv110-door{left:12px;top:289px;width:72px;height:298px;
+  background:linear-gradient(90deg,#6c9d9e 0 9%,#d3e8e5 10% 93%,#648a91 94%);
+  border:3px solid #497a87;border-radius:4px 10px 6px 3px;
+  box-shadow:inset -9px 0 #75a4a688,0 4px 11px #17455888}
+.gv-world.gv-gear-shop .gv109-door-click.gv110-door::before{content:'출입문';font-size:10px}
+.gv-world.gv-gear-shop .gv109-door-click.gv110-door .gv110-exit-label{top:68px;left:2px;right:2px;
+  padding:5px 1px;font-size:10px;letter-spacing:-.5px;white-space:nowrap}
+.gv-world.gv-gear-shop .gv109-door-click.gv110-door:hover{border-color:#ffe18b}
+/* The original gv-exit has an old duplicate green sign and must stay hidden. */
+.gv-world .gv-exit{visibility:hidden!important;pointer-events:none!important}
+/* Store-specific purchasing: never overlay product, poster or customer. */
+.gv-world .gv108-store-supply.gv110-supply{
+  position:absolute!important;right:auto!important;bottom:auto!important;inset:auto!important;
+  left:918px!important;top:219px!important;width:292px!important;max-width:292px!important;
+  min-width:0!important;height:35px!important;min-height:35px!important;
+  display:flex!important;align-items:center;justify-content:center;
+  padding:4px 11px!important;margin:0!important;
+  line-height:1!important;font-size:13px!important;font-weight:850!important;white-space:nowrap!important;
+  border:2px solid #d2faeb!important;border-radius:9px!important;
+  background:linear-gradient(90deg,#09576e,#0b8491)!important;color:#fff!important;
+  box-shadow:0 3px 7px #1b424a57!important;z-index:12!important;cursor:pointer}
+.gv-world.gv110-fish .gv-storage-bay .gv-baycaption{display:none!important}
+.gv-world.gv110-fish .gv108-store-supply.gv110-supply:hover,
+.gv-world.gv110-fish .gv108-store-supply.gv110-supply:focus-visible{background:#128d81!important;outline:2px solid #ffe6a3}
+/* Gear shop: buy directly beside the product/lot sign and above the dry stock,
+   never anywhere near a refrigerator that should not exist in this trade. */
+.gv-world.gv-gear-shop .gv108-store-supply.gv110-supply{
+  left:1030px!important;top:172px!important;width:235px!important;max-width:235px!important;
+  height:37px!important;min-height:37px!important;font-size:13px!important;
+  background:linear-gradient(90deg,#0c5573,#0b7a85)!important}
+.gv-world.gv-gear-shop .gv108-store-supply.gv110-supply:hover,
+.gv-world.gv-gear-shop .gv108-store-supply.gv110-supply:focus-visible{background:#169382!important;outline:2px solid #ffe6a3}
+/* The clickable target must be the ACTUAL button (no pseudo hitbox detached
+   from the picture), and clicking it preserves the inherited logistics logic. */
+
+/* Gear equipment inventory: interactive stock objects occupy the cubbies,
+   solving the previous blank-window appearance without replacing the approved art. */
+.gv110-gear-stockroom{position:absolute;inset:0;z-index:5;pointer-events:none}
+.gv110-gear-stockroom-label{position:absolute;left:978px;top:211px;width:280px;height:27px;
+  display:grid;place-items:center;background:#0d6679eb;color:#fff;
+  font-size:13px;font-weight:850;border:2px solid #c6eaf0;border-radius:7px;
+  pointer-events:none;white-space:nowrap}
+.gv110-stockcard{position:absolute;width:105px;height:81px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:1px;background:#edf8f0eb;
+  border:1px solid #84adb4;border-radius:6px;box-shadow:inset 0 0 7px #afcfd2b3;
+  color:#1d5461;pointer-events:auto;cursor:pointer;padding:3px 2px}
+.gv110-stockcard .gv110-stockicon{font-size:24px;line-height:1}
+.gv110-stockcard .gv110-stockname{font-size:11px;line-height:1.2;white-space:nowrap}
+.gv110-stockcard .gv110-stockqty{font-size:10px;color:#087362;line-height:1.15}
+.gv110-stockcard:hover,.gv110-stockcard:focus-visible{border:3px solid #d8af44;
+  background:#fdf3d7;outline:2px solid #236e86}

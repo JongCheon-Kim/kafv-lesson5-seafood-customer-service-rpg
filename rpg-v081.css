@@ -1,0 +1,37 @@
+/* KAFV RPG v0.8.1: user-recorded regression fixes; preserve original lesson images, missions, and audio. */
+/* Legacy v0.7 scenes must get a measurable stage box after modern → legacy switch. */
+.sim-stage #sim-scene:not(.v80-host){display:block!important;width:min(100%,1150px)!important;max-width:1150px!important;height:auto!important;min-height:0!important;aspect-ratio:auto!important;margin:6px auto!important;background:#0c334d!important;overflow:visible!important}
+.sim-stage #sim-scene .v80-legacy.sim-scene.rpg-scene{display:flex!important;width:100%!important;max-width:none!important;min-height:0!important;height:auto!important;aspect-ratio:1540/965!important;overflow:hidden!important;flex-direction:column!important;border-radius:10px!important}
+.sim-stage #sim-scene .v80-legacy .rpg-stage-body{flex:1 1 auto!important;min-height:0!important}
+.sim-stage #sim-scene .v80-legacy .rpg-map>svg,.sim-stage #sim-scene .v80-legacy .rpg-interior>svg{display:block;width:100%;height:100%}
+/* Cards are no longer an always-expanded second screen beneath the game. */
+.sim-stage .sim-story-section{min-height:0!important;flex:0 0 auto!important;max-height:240px!important;overflow:hidden!important;box-shadow:0 -2px 7px #123a4433!important;transition:max-height .16s ease-out}
+.sim-stage .sim-story-section.collapsed{height:37px!important;max-height:37px!important;min-height:37px!important;flex:0 0 37px!important}
+.sim-stage .sim-story-section.collapsed #sim-case-body{display:none!important}
+.sim-stage .sim-story-section .story-section-head{padding:5px 11px!important;min-height:35px;gap:10px;background:#e6f3f6!important}
+.story-section-head #sim-story-toggle{flex:0 0 auto;border:1px solid #84bac2;background:#fff;color:#17586c;font-size:11px;font-weight:800;padding:4px 9px;border-radius:7px;cursor:pointer}
+.sim-stage .sim-story-section #sim-case-body{padding:7px 11px!important;max-height:198px!important;overflow-y:auto!important}
+.sim-stage .sim-story-section .story-lead{padding:5px 9px!important}
+.sim-stage .sim-story-section .sim-choices{grid-template-columns:1fr 1fr!important;gap:5px!important}
+.sim-stage .sim-story-section .sim-choice{min-height:33px;padding:5px 7px!important;font-size:11px;align-items:center}
+.sim-stage .sim-story-section .sim-case-buttons{margin-top:5px!important}
+.sim-stage .sim-story-section h3{font-size:13px!important;margin:1px 0 3px!important}
+.sim-stage .sim-story-section .sim-auto-info{padding:7px!important;gap:3px!important}
+.sim-stage .sim-story-section .sim-auto-info p{line-height:1.35!important;margin:0!important}
+.sim-stage .sim-story-section .sim-auto-info h3{font-size:13px!important}
+/* Left-hand mission list trims excess white space without hiding tasks. */
+.sim-locations #sim-commands{gap:4px!important}
+.sim-locations .sim-cmd{min-height:40px!important;padding:5px 7px!important;border-radius:7px!important}
+.sim-locations .sim-cmd b{font-size:11px!important;line-height:1.3!important}
+.sim-locations .sim-cmd .cmd-state{font-size:15px!important}
+#sim-scene.v80-host .v80-status{max-width:59%;padding:6px 9px;font-size:11px}
+#sim-scene.v80-host .v80-rail{bottom:7px;left:8px;right:8px}
+#sim-scene.v80-host .v80-legend{max-width:35%;padding:6px 8px}
+@media(max-width:780px){
+ .sim-stage #sim-scene .v80-legacy.sim-scene.rpg-scene{aspect-ratio:1540/1090!important}
+ .sim-stage .sim-story-section{max-height:290px!important}
+ .sim-stage .sim-story-section #sim-case-body{max-height:248px!important}
+ .sim-stage .sim-story-section .sim-choices{grid-template-columns:1fr!important}
+}
+/* Keep the expand/collapse button on the left; fixed assistant icon occupies the far-right corner. */
+.sim-stage .sim-story-section .story-section-head{justify-content:flex-start!important}

@@ -1,0 +1,33 @@
+/* v0.8.0 experimental vertical-slice overlay: legacy 24 mission flow retained */
+#sim-scene.v80-host{position:relative;min-height:480px;overflow:hidden;border-radius:13px;background:#0a2534;padding:0;isolation:isolate}
+.v80-shell{position:relative;isolation:isolate;overflow:hidden;width:100%;aspect-ratio:1200/680;min-height:400px;max-height:calc(100vh - 115px);background:#092839;border:1px solid #244e57;border-radius:12px;box-shadow:inset 0 0 0 1px #ffffff26;user-select:none}
+.v80-canvas{width:100%;height:100%;display:block;cursor:crosshair;touch-action:manipulation}
+.v80-top{position:absolute;left:12px;top:12px;right:12px;display:flex;align-items:start;gap:9px;flex-wrap:wrap;pointer-events:none;z-index:4}
+.v80-top>*{pointer-events:auto}
+.v80-location{padding:9px 13px;max-width:53%;border-radius:10px;background:#092c3ae8;color:#efffff;box-shadow:0 4px 20px #0003;line-height:1.3}
+.v80-location strong{font-size:15px;display:block;letter-spacing:-.3px}
+.v80-location span{font-size:11px;color:#9fdae1}
+.v80-pill{border-radius:999px;background:#fbf7e7eb;color:#123d44;border:1px solid #cbe5e5;font-weight:800;padding:8px 11px;font-size:11px}
+.v80-tools{display:flex;align-items:center;gap:5px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
+.v80-tools button,.v80-context button{border:1px solid #71b9b9;background:#0e515f;color:#eaffff;border-radius:8px;padding:8px 11px;font-weight:800;font-family:inherit;cursor:pointer;font-size:12px}
+.v80-tools button:hover,.v80-context button:hover{background:#157285}
+.v80-tools button:disabled{opacity:.42;cursor:not-allowed}
+.v80-tools .v80-warn{background:#d9f0db;color:#164b32;border-color:#b6d5ca}
+.v80-rail{position:absolute;left:12px;right:12px;bottom:10px;display:flex;align-items:end;justify-content:space-between;gap:8px;pointer-events:none;z-index:3}
+.v80-status{background:#092d3bdd;border:1px solid #4c8d91a8;border-radius:9px;color:#e9ffff;font-size:12px;line-height:1.45;max-width:68%;padding:9px 12px;box-shadow:0 6px 18px #0003}
+.v80-status small{display:block;color:#9dd6da;font-size:10px}
+.v80-rail .v80-legend{max-width:32%;background:#071d2dbd;border-radius:8px;color:#eaffee;font-size:10px;text-align:right;padding:8px 10px}
+.v80-context{z-index:6;position:absolute;width:min(292px,75%);border:1px solid #b9d9d1;background:#fbfffaf5;color:#163b40;border-radius:12px;padding:12px;box-shadow:0 12px 36px #061b2590;user-select:text}
+.v80-context strong{display:block;font-size:15px;margin-bottom:6px}
+.v80-context p{line-height:1.45;margin:3px 0 8px;font-size:12px;color:#465e61}
+.v80-context .v80-choices{display:flex;flex-wrap:wrap;gap:5px}
+.v80-context button{background:#146675;border-color:#0c5364;font-size:11px;min-height:35px}
+.v80-context .v80-close{position:absolute;right:8px;top:7px;background:#e3edf0;border:0;color:#1f4546;padding:3px 6px}
+.v80-alert{position:absolute;left:50%;top:17%;transform:translateX(-50%);z-index:5;background:#fff9e9ef;color:#183d40;padding:9px 13px;max-width:72%;border-radius:8px;border:1px solid #c7c2a0;font-size:12px;font-weight:750;box-shadow:0 6px 14px #0003;text-align:center}
+.v80-legacy{height:100%;min-height:480px}.v80-legacy.rpg-scene{margin:0;width:100%}
+.v80-log{position:absolute;right:12px;bottom:58px;z-index:3;background:#0a2e3fe8;padding:7px 10px;color:#e9ffff;font-size:11px;border:1px solid #4e9f9c;border-radius:8px;max-width:50%}
+@media(max-width:740px){.v80-shell{max-height:none;aspect-ratio:4/4.1;min-height:360px}.v80-location{max-width:100%;padding:7px 9px}.v80-location strong{font-size:12px}.v80-tools{margin-left:0;width:100%;justify-content:flex-start}.v80-tools button{font-size:10px;padding:6px 7px}.v80-status{font-size:10px;max-width:100%}.v80-legend{display:none}.v80-context{width:min(260px,85%)}.v80-log{font-size:9px;bottom:65px}}
+
+/* Give the playable scene substantially more width than the original slide-style panel. */
+@media(min-width:781px){.simulator-screen .sim-grid{grid-template-columns:minmax(290px,305px) minmax(0,1fr)!important}.sim-stage #sim-scene.v80-host{width:min(100%,1150px)!important;max-width:1150px!important;margin:6px auto 10px!important}}
+@media(max-width:780px){.sim-stage #sim-scene.v80-host{width:100%!important;max-width:100%!important;margin:3px auto!important}.v80-shell{aspect-ratio:1200/680;min-height:0;max-height:none}.v80-rail .v80-status{padding:4px 6px;font-size:9px}.v80-tools{gap:3px}.v80-location{display:none}}

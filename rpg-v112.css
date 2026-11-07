@@ -1,0 +1,35 @@
+/* KAFV 1.0.12 · pixel-registered labels and transparent interaction zones */
+.gv-world.gv112-registered:not(.gv-gear-shop) .gv-scale{
+ left:751px!important;top:468px!important;width:141px!important;height:102px!important;min-height:102px!important;
+ border:0!important;background:transparent!important;box-shadow:none!important;transform:none!important;
+ z-index:7!important;overflow:visible!important;pointer-events:auto!important;
+}
+.gv-world.gv112-registered:not(.gv-gear-shop) .gv-scale em{
+ position:absolute!important;top:88px!important;left:39px!important;
+ font-size:14px!important;width:112px!important;min-width:112px!important;line-height:1.3!important;
+ pointer-events:none!important;padding:2px 5px!important;
+}
+.gv-world.gv112-registered:not(.gv-gear-shop) .gv-scale .gv-scale-item{top:70px!important;left:17px!important;pointer-events:none!important}
+.gv-world.gv112-registered:not(.gv-gear-shop) .gv-packing{
+ left:1210px!important;top:615px!important;width:177px!important;height:37px!important;
+ min-height:37px!important;z-index:8!important;font-size:13px!important;padding:3px!important;
+ background:#076979de!important;border:2px solid #c1e3d7!important;
+}
+.gv-world.gv112-registered:not(.gv-gear-shop) .gv-checkout{
+ left:1431px!important;top:632px!important;width:201px!important;height:60px!important;
+ min-height:60px!important;z-index:8!important;gap:1px!important;background:#075b70dc!important;
+}
+.gv-world.gv112-registered:not(.gv-gear-shop) .gv-checkout strong{font-size:14px!important}
+.gv-world.gv112-registered:not(.gv-gear-shop) .gv-checkout small,.gv-world.gv112-registered:not(.gv-gear-shop) .gv-cart-count{font-size:10px!important}
+.gv-world.gv112-registered .gv109-precision-hits{z-index:6!important}
+.gv-world.gv112-registered .gv109-precision-hit{border-radius:5px!important;outline-offset:2px}
+.gv-world.gv112-registered .gv109-pointer-tip{z-index:17!important}
+.gv-world.gv112-registered .gv-customer img{image-rendering:auto!important;filter:none!important}
+.gv-world.gv112-registered .gv-actor{filter:drop-shadow(0 3px 2px #1b405444)!important}
+/* The physical photos, not the action labels, communicate the counter/equipment. */
+.gv-world.gv112-registered:not(.gv-gear-shop) .gv-product-0{left:131px!important;top:537px!important}
+.gv-world.gv112-registered:not(.gv-gear-shop) .gv-product-1{left:233px!important;top:537px!important}
+.gv-world.gv112-registered:not(.gv-gear-shop) .gv-product-2{left:335px!important;top:537px!important}
+/* Anchor the standing merchant's feet to the same foreground floor plane as the guest,
+   rather than letting the inherited short-actor transform float over the scale. */
+.gv-world.gv112-registered .gv-actor.gv-seller{transform:translate(-50%,-78%)!important}

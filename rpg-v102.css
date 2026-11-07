@@ -1,0 +1,141 @@
+/* v1.0.2 · independent background/equipment/actor layers and a stable split-screen layout. */
+#simulator-screen.gv-v100-ready .sim-grid{
+  display:grid!important;grid-template-columns:minmax(210px,255px) minmax(0,1fr)!important;
+  align-items:start!important;gap:10px!important;max-width:none!important;
+}
+#simulator-screen.gv-v100-ready .sim-locations{
+  display:block!important;position:sticky!important;left:auto!important;top:8px!important;z-index:3!important;
+  width:100%!important;max-width:none!important;max-height:calc(100vh - 135px)!important;
+  overflow:auto!important;background:#f6fbfc!important;box-shadow:none!important;
+  border:1px solid #8bb3c0!important;padding:9px!important;border-radius:10px!important;
+}
+#simulator-screen.gv-v100-ready .sim-stage{min-width:0!important;max-width:none!important;overflow:hidden!important}
+#simulator-screen.gv-v100-ready .sim-grid .sim-modebar{display:none!important}
+#simulator-screen.gv-v100-ready .sim-locations .sim-side-title{font-size:13px!important}
+#simulator-screen.gv-v100-ready .sim-locations button{font-size:11px!important}
+/* Deliberately keep a fixed control area and scale the world to OUTPUT area only. */
+.gv-root .gv-viewport{overflow:hidden!important}
+.gv-root .gv-world{isolation:isolate!important}
+.gv-shop-bg{z-index:0!important}
+/* Cover the refrigerator and trace board already embedded in the legacy background PHOTO.
+   The only visible, clickable refrigerators are independent #gv-door-* game objects. */
+.gv-storage-bay{position:absolute;left:902px;top:228px;width:323px;height:504px;z-index:1;
+  background:linear-gradient(to bottom,transparent 0 0%,#d6e6de 0 4%,#e7efec 4% 73%,#dad3c5 73% 100%);
+  border-left:8px solid #c5d5cc;border-right:5px solid #c7d8d1;
+  box-shadow:inset 0 0 13px #4d748132,0 5px 6px #163a4851;
+  pointer-events:none;overflow:hidden}
+.gv-storage-bay::before{content:"";position:absolute;top:22px;left:0;right:0;height:335px;
+  background:repeating-linear-gradient(to bottom,transparent 0 58px,#cadbd4 58px 60px),
+  repeating-linear-gradient(to right,transparent 0 85px,#d2e1dc 85px 87px)}
+.gv-storage-bay::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:#b7a993}
+.gv-storage-bay .gv-baycaption{position:absolute;z-index:1;top:6px;left:20px;right:20px;padding:5px 0;border-radius:5px;
+ background:#16556b;color:#f2fdff;text-align:center;font-size:15px;font-weight:850;letter-spacing:1px}
+.gv-traceboard{position:absolute;z-index:3;left:1220px;top:232px;width:166px;height:180px;display:flex;flex-direction:column;gap:8px;
+ background:#f2f5e5;color:#1d4957;padding:12px 10px;border:7px solid #4b7575;border-radius:8px;
+ box-shadow:0 7px 12px #1e455c5c;font-size:15px;font-weight:800;cursor:pointer}
+.gv-traceboard b{font-size:16px;text-align:center;background:#17566a;color:#fff;padding:5px 0;margin:-9px -8px 1px}
+.gv-traceboard span{border-bottom:1px solid #a6c1b6;padding:2px 0}
+.gv-traceboard:hover{outline:3px solid #e4cc77}
+.gv-cabinet-door{z-index:4!important;background:linear-gradient(110deg,#ddeaf0,#79aeb9 35%,#427387 50%,#eaf7fa 100%)!important;
+  border:6px solid #58869b!important;border-bottom:17px solid #4c6f79!important;border-radius:12px!important;
+  box-shadow:inset 0 0 10px #b3d8dc99,5px 9px 10px #0f2e3e72!important}
+.gv-cabinet-door::before{content:"";position:absolute;z-index:5;right:6px;top:115px;width:7px;height:55px;border-radius:9px;
+ background:linear-gradient(90deg,#395f6f,#f1fcff,#588ba0);box-shadow:0 0 2px #ffffff88;pointer-events:none}
+.gv-cabinet-door.open::before{opacity:0}
+.gv-cabinet-door .gv-glassdoor{background:linear-gradient(115deg,#d5f8ffa2,#8ed2e0a8 42%,#66a0b9a3 48%,#e4fbffad)!important;
+ backdrop-filter:blur(1px);font-size:17px!important;text-shadow:0 1px #fff}
+.gv-cabinet-door.open{box-shadow:0 0 0 5px #91eadcc4,0 6px 19px #225a5dbb!important}
+.gv-cabinet-door.open .gv-inner-shelf{box-shadow:inset 0 0 30px #a6faf499;overflow:hidden}
+.gv-storedproduct{display:flex;align-items:center;justify-content:space-between;gap:4px;padding:7px!important;
+  font-size:12px!important;background:linear-gradient(110deg,#e5e3b5,#f1dfab)!important;border:2px solid #b5d3bd!important;
+  border-radius:8px!important;color:#21465a!important}
+.gv-storedproduct .gv-package-icon{font-size:21px;display:inline-block}
+.gv-storedproduct small{font-size:9px!important}
+.gv-item-flight{position:absolute;z-index:25;width:80px;min-height:44px;display:grid;place-items:center;
+ background:#f1f4dc;color:#155669;border:3px solid #e3b456;border-radius:10px;box-shadow:0 5px 12px #21455188;
+ font-size:12px;font-weight:900;pointer-events:none;transition:transform .82s ease-in-out,opacity .82s ease-in-out}
+.gv-item-flight.moving{transform:translate(var(--dx),var(--dy)) scale(.5);opacity:.18}
+.gv-storage-flash{animation:gv-storage-pulse .75s ease-in-out 1}
+@keyframes gv-storage-pulse{0%,100%{filter:none}50%{filter:brightness(1.45) drop-shadow(0 0 17px #f8e287)}}
+/* Put the electronic scale adjacent to the display rather than in the dialogue corridor. */
+.gv-scale{left:506px!important;top:552px!important;width:190px!important;min-height:85px!important;z-index:6!important;
+ background:linear-gradient(#f8f7e1,#b8e7e0)!important;color:#154e5e!important;border:4px solid #6f9fa2!important}
+.gv-scale strong{font-size:15px!important}
+.gv-scale small{font-size:10px!important;color:#335e66!important}
+.gv-scale em{min-width:110px!important;font-size:16px!important;padding:2px 6px!important}
+.gv-packing{left:1210px!important;top:585px!important;width:158px!important;height:56px!important;z-index:7!important;
+ background:#0c657bd9!important;border-color:#e6ffed!important;font-size:13px!important}
+.gv-checkout{left:1400px!important;top:597px!important;width:190px!important;min-height:77px!important;font-size:13px!important}
+.gv-product{width:100px!important;height:82px!important;padding:5px 3px!important;gap:1px!important}
+.gv-producttitle{font-size:16px!important}.gv-prodspec{font-size:10px!important}.gv-stockbadge{font-size:10px!important}
+.gv-product-0{left:115px!important;top:508px!important}.gv-product-1{left:224px!important;top:508px!important}.gv-product-2{left:332px!important;top:508px!important}
+/* Actor scale, stability and facing. Never animate the entire bitmap. */
+.gv-actor{filter:drop-shadow(0 4px 4px #243e3958)!important;will-change:left,top!important;
+ transition:left var(--walk-time,.78s) cubic-bezier(.25,.55,.3,1),top var(--walk-time,.78s) cubic-bezier(.25,.55,.3,1)!important}
+.gv-customer{width:132px!important;height:262px!important}
+.gv-customer img{height:240px!important;max-width:100%!important}
+.gv-seller{width:129px!important;height:188px!important}
+.gv-seller img{height:170px!important;max-width:100%!important}
+.gv-actor img{transition:transform .17s ease-out!important;animation:none!important;transform:none!important}
+.gv-actor[data-facing="left"] img{transform:scaleX(-1)!important}
+.gv-actor[data-facing="right"] img{transform:scaleX(1)!important}
+.gv-actor .gv-npc-hit{left:calc(50% - 30px)!important;top:14px!important;width:60px!important;height:95px!important}
+.gv-actor .gv-role{font-size:11px!important;padding:3px 8px!important;letter-spacing:0!important}
+.gv-actor .gv-bubble{font-size:11px!important;line-height:1.35!important;font-weight:750!important;
+ min-width:125px!important;max-width:220px!important;padding:8px 10px!important;border-radius:14px!important;
+ border-width:2px!important;bottom:calc(100% - 10px)!important;text-shadow:none!important}
+.gv-bubble:after{bottom:-9px!important;border-left-width:8px!important;border-right-width:8px!important;border-top-width:9px!important}
+.gv-actor .gv-bubble[hidden]{display:none!important}
+/* A small draggable panel starts beside the object, not over the whole scene. */
+.gv-focuspanel{width:312px!important;max-height:390px!important;right:auto!important;top:190px;
+ border-width:2px!important;border-radius:12px!important;box-shadow:0 7px 17px #102b3c81!important}
+.gv-focuspanel header{padding:7px 10px!important;cursor:grab;touch-action:none}
+.gv-focuspanel header:active{cursor:grabbing}
+.gv-focuspanel header strong{font-size:14px!important}
+.gv-focuspanel header small{font-size:9px!important}
+.gv-focuspanel header button{font-size:20px!important;padding:0 4px!important}
+.gv-focuspanel nav{padding:5px!important;gap:2px!important}
+.gv-focuspanel nav button{font-size:10px!important;padding:5px 2px!important}
+.gv-focuspanel .gv-panelproduct{padding:7px 9px!important}
+.gv-focuspanel .gv-panellines>div{padding:5px 6px!important;gap:5px!important}
+.gv-focuspanel .gv-panellines span,.gv-focuspanel .gv-panellines b{font-size:11px!important;line-height:1.25!important}
+.gv-focuspanel .gv-producticon{font-size:31px!important}
+.gv-focuspanel footer{padding:5px 8px!important}
+.gv-focuspanel footer button,.gv-focuspanel .gv-panelactions button,.gv-focuspanel .gv-smallactions button{
+ font-size:11px!important;padding:7px 5px!important;min-height:28px!important}
+.gv-focuspanel .gv-smallactions{padding:7px!important;gap:4px!important}
+.gv-focuspanel .gv-fullpanellines{padding:7px!important;max-height:248px!important}
+.gv-focuspanel[hidden]{display:none!important}
+/* Physical harbor object motion, not only step labels changing. */
+.gv-harbor-animated-lot{position:absolute;left:210px;top:472px;z-index:8;width:155px;height:58px;
+ background:linear-gradient(#dbac6b,#a36c3a);border:5px solid #775332;border-radius:7px;
+ display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:0 7px 9px #193a3d88;
+ transform:translate(0,0);transition:transform 1.3s ease-in-out,opacity .75s}
+.gv-harbor-animated-lot:before{content:'📦';font-size:22px;margin-right:3px}
+.gv-harbor-animated-lot[data-harborstage="2"]{transform:translate(100px,-5px)}
+.gv-harbor-animated-lot[data-harborstage="3"]{transform:translate(445px,52px)}
+.gv-harbor-animated-lot[data-harborstage="4"]{transform:translate(795px,49px)}
+.gv-harbor-animated-lot[data-harborstage="5"]{transform:translate(1070px,-14px)}
+.gv-harbor-animated-lot[data-harborstage="6"]{transform:translate(1240px,-120px) scale(.5);opacity:.18}
+.gv-mooring-line{position:absolute;left:457px;top:471px;height:3px;width:0;background:#f7e5b2;transform:rotate(12deg);z-index:5;transition:width .9s}
+.gv-mooring-line[data-docked="true"]{width:180px}
+.gv-harbor-stepnote{position:absolute;left:50px;top:680px;width:350px;background:#eaf9eced;color:#153c4d;
+ padding:8px;border-radius:8px;z-index:8;font-weight:800;font-size:14px}
+@media(max-width:1040px){#simulator-screen.gv-v100-ready .sim-grid{grid-template-columns:minmax(0,1fr)!important}
+ #simulator-screen.gv-v100-ready .sim-locations{display:none!important;position:absolute!important;width:260px!important;
+ left:8px!important;top:0!important;max-height:650px!important;box-shadow:0 12px 22px #23486688!important;z-index:110!important}
+ #simulator-screen.gv-v100-ready.gv-drawer-open .sim-locations{display:block!important}}
+/* Invisible legacy hotspots always stay below the dedicated, visible equipment. */
+.gv-backdrop-hits{z-index:2!important}
+.gv-productzones{z-index:6!important}
+.gv-focuspanel{z-index:18!important}
+.gv-traceboard{touch-action:manipulation}
+/* Conceal the OLD photographic scale after relocating the single functional one beside the display. */
+.gv-original-scale-cover{position:absolute;left:730px;top:473px;width:191px;height:108px;z-index:1;pointer-events:none;
+ border:2px solid #798f94;border-radius:6px 6px 1px 1px;
+ background:linear-gradient(160deg,#c1d0d0,#e9eded 18%,#95a8ae 50%,#d8e0dc 66%,#6d878a 100%);
+ box-shadow:inset 1px 2px 6px #eef7f7b1,0 5px 9px #4259615e}
+.gv-original-scale-cover::before{content:'';position:absolute;left:10px;right:10px;top:5px;height:15px;
+ border:1px solid #b3c5c7;background:linear-gradient(#eff8f7,#abbdbd)}
+.gv-original-scale-cover::after{content:'위생 작업대';position:absolute;bottom:12px;right:14px;
+ color:#315763;font-size:12px;font-weight:800;text-shadow:0 1px #eef8f5}
