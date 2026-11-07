@@ -1,0 +1,63 @@
+{
+  "version": "0.5.1",
+  "master": "v0.4.7",
+  "original": "lesson5 v0.5.0",
+  "narration_source": "KAFV_제5차시_고객응대_판매서비스_클레임관리_35컷_강사용_나레이션_120분.docx",
+  "narration_35": 35,
+  "term_count": 70,
+  "scene_sources": {
+    "receiving": "01 upper photo",
+    "lab": "15 right panel photo",
+    "cold": "25 right panel photo",
+    "display": "10 left panel photo",
+    "dispatch": "11 right panel photo",
+    "outdoor": "29 left panel photo",
+    "office": "22 right panel photo"
+  },
+  "limitations": [
+    "cropped photos include original infographic speech bubbles",
+    "not real facility blueprints",
+    "no separate score or grade evaluation"
+  ],
+  "scene_assets": [
+    "cold.webp",
+    "cold_thumb.webp",
+    "dispatch.webp",
+    "dispatch_thumb.webp",
+    "display.webp",
+    "display_thumb.webp",
+    "lab.webp",
+    "lab_thumb.webp",
+    "office.webp",
+    "office_thumb.webp",
+    "outdoor.webp",
+    "outdoor_thumb.webp",
+    "receiving.webp",
+    "receiving_thumb.webp",
+    "role_customer.webp",
+    "role_seller.webp"
+  ],
+  "scene_sha256": {
+    "receiving.webp": "981d109ae7072649a9f3a946d0ccfaba90b7fa1b896cb9115d1dc1d0a41f9993",
+    "outdoor.webp": "ced5a2fafb27c0ac0ca5bd0602630d6ef76465fdfa1c5435f9aa97808c2a2c82",
+    "role_customer.webp": "5d56ae93a2625ed534ba8ac0732e8c381441a09131a828e04e4771c92ad472b8",
+    "display.webp": "cae4f55f3fbb8a0addc92518cc3f844c905d678b3d8f97c0b1a651edb37b14c3",
+    "office.webp": "6217615784cc4dba19dd3f588379780f1bc20da3f53e02b042c19415d3f34b10",
+    "lab.webp": "ce31f16ea67b6aceacb36956905db87c88055e86e86974a0251e74c4f886de41",
+    "role_seller.webp": "43d04da3e615d6b3e33343ffd16bf160f52ef99cdc553d5d2bf341d7dbd3fc3b",
+    "dispatch.webp": "3c561aac03601e510b7af5e2953bde0acdedceabda20b510557d899ef4fb8256",
+    "cold.webp": "d2ffa6194831e61944b682c7ef516e2f5b4d6f19f81d091aaef6ed8629ff2e37"
+  },
+  "runtime_tests": {
+    "instructor_narration_35": true,
+    "correct_lecture_parts_6": true,
+    "selectable_object_outline": true,
+    "rooms_7": true,
+    "missions_24": true,
+    "actions_48": true,
+    "record_forms_33_34_35_csv": true,
+    "desktop_js_errors": 0,
+    "mobile_js_errors": 0,
+    "independent_grading": false
+  }
+}

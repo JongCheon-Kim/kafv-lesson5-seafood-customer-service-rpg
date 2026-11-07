@@ -1,0 +1,838 @@
+{
+  "terms": [
+    {
+      "name": "고객응대",
+      "english": "",
+      "definition": "고객의 질문·요구·불편에 반응하는 전 과정",
+      "slide": 1,
+      "raw": "고객응대",
+      "aliases": [
+        "고객응대",
+        ""
+      ]
+    },
+    {
+      "name": "클레임",
+      "english": "Claim",
+      "definition": "상품이나 서비스에 대해 제기하는 이의·요구",
+      "slide": 1,
+      "raw": "클레임(Claim)",
+      "aliases": [
+        "클레임",
+        "클레임(Claim)",
+        "Claim"
+      ]
+    },
+    {
+      "name": "고객경험",
+      "english": "Customer Experience",
+      "definition": "고객이 구매 전·중·후에 겪는 접점의 총체",
+      "slide": 2,
+      "raw": "고객경험(Customer Experience)",
+      "aliases": [
+        "고객경험",
+        "고객경험(Customer Experience)",
+        "Customer Experience"
+      ]
+    },
+    {
+      "name": "서비스 기준",
+      "english": "",
+      "definition": "모든 직원이 공통으로 지키는 확인·안내·처리 약속",
+      "slide": 2,
+      "raw": "서비스 기준",
+      "aliases": [
+        "서비스 기준",
+        ""
+      ]
+    },
+    {
+      "name": "구매 전",
+      "english": "Pre-purchase",
+      "definition": "선택을 준비하고 정보를 찾는 단계",
+      "slide": 3,
+      "raw": "구매 전(Pre-purchase)",
+      "aliases": [
+        "구매 전",
+        "구매 전(Pre-purchase)",
+        "Pre-purchase"
+      ]
+    },
+    {
+      "name": "구매 후 서비스",
+      "english": "After-sales Service",
+      "definition": "구매 이후 문의·안내·문제 해결",
+      "slide": 3,
+      "raw": "구매 후 서비스(After-sales Service)",
+      "aliases": [
+        "구매 후 서비스",
+        "구매 후 서비스(After-sales Service)",
+        "After-sales Service"
+      ]
+    },
+    {
+      "name": "선택 부담",
+      "english": "",
+      "definition": "비교기준이 없을 때 느끼는 결정의 어려움",
+      "slide": 4,
+      "raw": "선택 부담",
+      "aliases": [
+        "선택 부담",
+        ""
+      ]
+    },
+    {
+      "name": "니즈",
+      "english": "Needs",
+      "definition": "고객이 해결하려는 구체적 필요",
+      "slide": 4,
+      "raw": "니즈(Needs)",
+      "aliases": [
+        "니즈",
+        "니즈(Needs)",
+        "Needs"
+      ]
+    },
+    {
+      "name": "고객기대",
+      "english": "Expectation",
+      "definition": "구매 전 예상한 서비스 수준",
+      "slide": 5,
+      "raw": "고객기대(Expectation)",
+      "aliases": [
+        "고객기대",
+        "고객기대(Expectation)",
+        "Expectation"
+      ]
+    },
+    {
+      "name": "지각성과",
+      "english": "Perceived Performance",
+      "definition": "실제 경험했다고 느낀 서비스 결과",
+      "slide": 5,
+      "raw": "지각성과(Perceived Performance)",
+      "aliases": [
+        "지각성과",
+        "지각성과(Perceived Performance)",
+        "Perceived Performance"
+      ]
+    },
+    {
+      "name": "서비스 품질",
+      "english": "Service Quality",
+      "definition": "고객이 경험한 서비스 수행 수준",
+      "slide": 6,
+      "raw": "서비스 품질(Service Quality)",
+      "aliases": [
+        "서비스 품질",
+        "서비스 품질(Service Quality)",
+        "Service Quality"
+      ]
+    },
+    {
+      "name": "약속 이행",
+      "english": "",
+      "definition": "합의한 상품·수량·손질·시간 등을 실제로 지키는 일",
+      "slide": 6,
+      "raw": "약속 이행",
+      "aliases": [
+        "약속 이행",
+        ""
+      ]
+    },
+    {
+      "name": "재방문",
+      "english": "Repeat Visit",
+      "definition": "고객이 같은 매장을 다시 이용하는 행위",
+      "slide": 7,
+      "raw": "재방문(Repeat Visit)",
+      "aliases": [
+        "재방문",
+        "재방문(Repeat Visit)",
+        "Repeat Visit"
+      ]
+    },
+    {
+      "name": "관계마케팅",
+      "english": "Relationship Marketing",
+      "definition": "일회성 거래를 넘어 장기적 신뢰를 쌓는 활동",
+      "slide": 7,
+      "raw": "관계마케팅(Relationship Marketing)",
+      "aliases": [
+        "관계마케팅",
+        "관계마케팅(Relationship Marketing)",
+        "Relationship Marketing"
+      ]
+    },
+    {
+      "name": "상황별 응대",
+      "english": "",
+      "definition": "실제 구매 목적·제약조건에 따라 안내를 조정하는 방법",
+      "slide": 8,
+      "raw": "상황별 응대",
+      "aliases": [
+        "상황별 응대",
+        ""
+      ]
+    },
+    {
+      "name": "개방형 질문",
+      "english": "Open-ended Question",
+      "definition": "고객이 자유롭게 설명하도록 하는 질문",
+      "slide": 8,
+      "raw": "개방형 질문(Open-ended Question)",
+      "aliases": [
+        "개방형 질문",
+        "개방형 질문(Open-ended Question)",
+        "Open-ended Question"
+      ]
+    },
+    {
+      "name": "대안 평가",
+      "english": "Alternative Evaluation",
+      "definition": "구매 가능한 상품을 기준에 따라 비교하는 과정",
+      "slide": 9,
+      "raw": "대안 평가(Alternative Evaluation)",
+      "aliases": [
+        "대안 평가",
+        "대안 평가(Alternative Evaluation)",
+        "Alternative Evaluation"
+      ]
+    },
+    {
+      "name": "비교속성",
+      "english": "",
+      "definition": "가격·맛·손질·용도처럼 선택에 쓰는 기준",
+      "slide": 9,
+      "raw": "비교속성",
+      "aliases": [
+        "비교속성",
+        ""
+      ]
+    },
+    {
+      "name": "단위가격",
+      "english": "Unit Price",
+      "definition": "같은 중량 또는 개수 기준으로 환산한 가격",
+      "slide": 10,
+      "raw": "단위가격(Unit Price)",
+      "aliases": [
+        "단위가격",
+        "단위가격(Unit Price)",
+        "Unit Price"
+      ]
+    },
+    {
+      "name": "규격",
+      "english": "Specification",
+      "definition": "크기·중량·손질상태 등 상품의 약속된 조건",
+      "slide": 10,
+      "raw": "규격(Specification)",
+      "aliases": [
+        "규격",
+        "규격(Specification)",
+        "Specification"
+      ]
+    },
+    {
+      "name": "납기",
+      "english": "Delivery Date/Time",
+      "definition": "약속한 상품 인도 시점",
+      "slide": 11,
+      "raw": "납기(Delivery Date/Time)",
+      "aliases": [
+        "납기",
+        "납기(Delivery Date/Time)",
+        "Delivery Date/Time"
+      ]
+    },
+    {
+      "name": "이행가능성",
+      "english": "Feasibility",
+      "definition": "자원·재고·운송 조건상 지킬 수 있는 수준",
+      "slide": 11,
+      "raw": "이행가능성(Feasibility)",
+      "aliases": [
+        "이행가능성",
+        "이행가능성(Feasibility)",
+        "Feasibility"
+      ]
+    },
+    {
+      "name": "검품",
+      "english": "Inspection",
+      "definition": "상품이 합의한 규격과 상태에 맞는지 확인하는 과정",
+      "slide": 12,
+      "raw": "검품(Inspection)",
+      "aliases": [
+        "검품",
+        "검품(Inspection)",
+        "Inspection"
+      ]
+    },
+    {
+      "name": "거래조건",
+      "english": "Trade Terms",
+      "definition": "가격·납기·포장·결제·인도 등을 정한 조건",
+      "slide": 12,
+      "raw": "거래조건(Trade Terms)",
+      "aliases": [
+        "거래조건",
+        "거래조건(Trade Terms)",
+        "Trade Terms"
+      ]
+    },
+    {
+      "name": "표준응대",
+      "english": "Standard Service",
+      "definition": "담당자가 바뀌어도 지키는 기본 행동",
+      "slide": 13,
+      "raw": "표준응대(Standard Service)",
+      "aliases": [
+        "표준응대",
+        "표준응대(Standard Service)",
+        "Standard Service"
+      ]
+    },
+    {
+      "name": "재확인",
+      "english": "Read-back",
+      "definition": "받은 주문이나 요구를 다시 말해 서로 맞추는 일",
+      "slide": 13,
+      "raw": "재확인(Read-back)",
+      "aliases": [
+        "재확인",
+        "재확인(Read-back)",
+        "Read-back"
+      ]
+    },
+    {
+      "name": "상품속성",
+      "english": "Attribute",
+      "definition": "규격·상태·포장처럼 확인 가능한 특징",
+      "slide": 14,
+      "raw": "상품속성(Attribute)",
+      "aliases": [
+        "상품속성",
+        "상품속성(Attribute)",
+        "Attribute"
+      ]
+    },
+    {
+      "name": "고객편익",
+      "english": "Benefit",
+      "definition": "고객이 그 특징에서 얻는 실질적 이점",
+      "slide": 14,
+      "raw": "고객편익(Benefit)",
+      "aliases": [
+        "고객편익",
+        "고객편익(Benefit)",
+        "Benefit"
+      ]
+    },
+    {
+      "name": "규격서",
+      "english": "Specification Sheet",
+      "definition": "품목·크기·중량·처리방식 등을 명시한 문서",
+      "slide": 15,
+      "raw": "규격서(Specification Sheet)",
+      "aliases": [
+        "규격서",
+        "규격서(Specification Sheet)",
+        "Specification Sheet"
+      ]
+    },
+    {
+      "name": "검사기록",
+      "english": "Test/Inspection Record",
+      "definition": "특정 시료·물량·시점의 확인 결과",
+      "slide": 15,
+      "raw": "검사기록(Test/Inspection Record)",
+      "aliases": [
+        "검사기록",
+        "검사기록(Test/Inspection Record)",
+        "Test/Inspection Record"
+      ]
+    },
+    {
+      "name": "단가",
+      "english": "Unit Price",
+      "definition": "한 단위의 가격",
+      "slide": 16,
+      "raw": "단가(Unit Price)",
+      "aliases": [
+        "단가",
+        "단가(Unit Price)",
+        "Unit Price"
+      ]
+    },
+    {
+      "name": "총액",
+      "english": "Total Amount",
+      "definition": "수량·중량과 추가 항목을 반영한 최종 청구액",
+      "slide": 16,
+      "raw": "총액(Total Amount)",
+      "aliases": [
+        "총액",
+        "총액(Total Amount)",
+        "Total Amount"
+      ]
+    },
+    {
+      "name": "샘플",
+      "english": "Sample",
+      "definition": "평가를 위해 제시하는 대표 시료",
+      "slide": 17,
+      "raw": "샘플(Sample)",
+      "aliases": [
+        "샘플",
+        "샘플(Sample)",
+        "Sample"
+      ]
+    },
+    {
+      "name": "표본대표성",
+      "english": "Representativeness",
+      "definition": "시료가 전체 물량을 얼마나 반영하는가",
+      "slide": 17,
+      "raw": "표본대표성(Representativeness)",
+      "aliases": [
+        "표본대표성",
+        "표본대표성(Representativeness)",
+        "Representativeness"
+      ]
+    },
+    {
+      "name": "경청",
+      "english": "Active Listening",
+      "definition": "상대의 말을 끊지 않고 요지를 확인하는 태도",
+      "slide": 18,
+      "raw": "경청(Active Listening)",
+      "aliases": [
+        "경청",
+        "경청(Active Listening)",
+        "Active Listening"
+      ]
+    },
+    {
+      "name": "반론 처리",
+      "english": "Objection Handling",
+      "definition": "구매를 망설이는 이유를 파악해 정확하게 답하는 과정",
+      "slide": 18,
+      "raw": "반론 처리(Objection Handling)",
+      "aliases": [
+        "반론 처리",
+        "반론 처리(Objection Handling)",
+        "Objection Handling"
+      ]
+    },
+    {
+      "name": "대체상품",
+      "english": "Substitute Product",
+      "definition": "같은 목적을 다른 방식으로 충족하는 상품",
+      "slide": 19,
+      "raw": "대체상품(Substitute Product)",
+      "aliases": [
+        "대체상품",
+        "대체상품(Substitute Product)",
+        "Substitute Product"
+      ]
+    },
+    {
+      "name": "동의",
+      "english": "Consent",
+      "definition": "변경된 품목·조건을 고객이 알고 수락하는 것",
+      "slide": 19,
+      "raw": "동의(Consent)",
+      "aliases": [
+        "동의",
+        "동의(Consent)",
+        "Consent"
+      ]
+    },
+    {
+      "name": "주문 재확인",
+      "english": "Order Read-back",
+      "definition": "결정된 조건을 서로 다시 읽고 확인하는 절차",
+      "slide": 20,
+      "raw": "주문 재확인(Order Read-back)",
+      "aliases": [
+        "주문 재확인",
+        "주문 재확인(Order Read-back)",
+        "Order Read-back"
+      ]
+    },
+    {
+      "name": "발주서",
+      "english": "Purchase Order",
+      "definition": "주문 품목과 조건을 명시한 문서",
+      "slide": 20,
+      "raw": "발주서(Purchase Order)",
+      "aliases": [
+        "발주서",
+        "발주서(Purchase Order)",
+        "Purchase Order"
+      ]
+    },
+    {
+      "name": "민원유형",
+      "english": "Complaint Category",
+      "definition": "문제를 처리 절차에 맞게 구분한 항목",
+      "slide": 21,
+      "raw": "민원유형(Complaint Category)",
+      "aliases": [
+        "민원유형",
+        "민원유형(Complaint Category)",
+        "Complaint Category"
+      ]
+    },
+    {
+      "name": "증빙",
+      "english": "Evidence",
+      "definition": "거래·상태·과정을 객관적으로 보여 주는 자료",
+      "slide": 21,
+      "raw": "증빙(Evidence)",
+      "aliases": [
+        "증빙",
+        "증빙(Evidence)",
+        "Evidence"
+      ]
+    },
+    {
+      "name": "공감",
+      "english": "Empathy",
+      "definition": "고객의 불편한 경험을 이해하고 존중하는 태도",
+      "slide": 22,
+      "raw": "공감(Empathy)",
+      "aliases": [
+        "공감",
+        "공감(Empathy)",
+        "Empathy"
+      ]
+    },
+    {
+      "name": "접수기록",
+      "english": "Intake Record",
+      "definition": "민원 시각·내용·연락처·담당자 등을 적은 자료",
+      "slide": 22,
+      "raw": "접수기록(Intake Record)",
+      "aliases": [
+        "접수기록",
+        "접수기록(Intake Record)",
+        "Intake Record"
+      ]
+    },
+    {
+      "name": "계량조건",
+      "english": "Measurement Condition",
+      "definition": "물·얼음·포장·손질 전후 등 무게를 재는 상태",
+      "slide": 23,
+      "raw": "계량조건(Measurement Condition)",
+      "aliases": [
+        "계량조건",
+        "계량조건(Measurement Condition)",
+        "Measurement Condition"
+      ]
+    },
+    {
+      "name": "거래기록",
+      "english": "Transaction Record",
+      "definition": "주문·출고·결제 내용을 남긴 자료",
+      "slide": 23,
+      "raw": "거래기록(Transaction Record)",
+      "aliases": [
+        "거래기록",
+        "거래기록(Transaction Record)",
+        "Transaction Record"
+      ]
+    },
+    {
+      "name": "해결안",
+      "english": "Remedy",
+      "definition": "문제를 바로잡기 위한 교환·환불·재이행 등 조치",
+      "slide": 24,
+      "raw": "해결안(Remedy)",
+      "aliases": [
+        "해결안",
+        "해결안(Remedy)",
+        "Remedy"
+      ]
+    },
+    {
+      "name": "처리기한",
+      "english": "Resolution Time",
+      "definition": "조치 또는 다음 안내를 제공하기로 한 시점",
+      "slide": 24,
+      "raw": "처리기한(Resolution Time)",
+      "aliases": [
+        "처리기한",
+        "처리기한(Resolution Time)",
+        "Resolution Time"
+      ]
+    },
+    {
+      "name": "위해요소",
+      "english": "Hazard",
+      "definition": "식품의 안전에 영향을 줄 수 있는 생물·화학·물리 요인",
+      "slide": 25,
+      "raw": "위해요소(Hazard)",
+      "aliases": [
+        "위해요소",
+        "위해요소(Hazard)",
+        "Hazard"
+      ]
+    },
+    {
+      "name": "판매보류",
+      "english": "Hold",
+      "definition": "적합성 판단 전 해당 물량 판매·출고를 멈추는 조치",
+      "slide": 25,
+      "raw": "판매보류(Hold)",
+      "aliases": [
+        "판매보류",
+        "판매보류(Hold)",
+        "Hold"
+      ]
+    },
+    {
+      "name": "처리 완료",
+      "english": "Closed Action",
+      "definition": "직원이 약속한 조치를 끝낸 상태",
+      "slide": 26,
+      "raw": "처리 완료(Closed Action)",
+      "aliases": [
+        "처리 완료",
+        "처리 완료(Closed Action)",
+        "Closed Action"
+      ]
+    },
+    {
+      "name": "해결 확인",
+      "english": "Resolution Verification",
+      "definition": "고객에게 남은 문제가 없는지 확인한 결과",
+      "slide": 26,
+      "raw": "해결 확인(Resolution Verification)",
+      "aliases": [
+        "해결 확인",
+        "해결 확인(Resolution Verification)",
+        "Resolution Verification"
+      ]
+    },
+    {
+      "name": "재발 방지",
+      "english": "Corrective/Preventive Action",
+      "definition": "같은 문제가 다시 생기지 않도록 원인과 절차를 개선하는 일",
+      "slide": 27,
+      "raw": "재발 방지(Corrective/Preventive Action)",
+      "aliases": [
+        "재발 방지",
+        "재발 방지(Corrective/Preventive Action)",
+        "Corrective/Preventive Action"
+      ]
+    },
+    {
+      "name": "사후점검",
+      "english": "Follow-up",
+      "definition": "변경한 방법이 실제로 지켜지는지 확인",
+      "slide": 27,
+      "raw": "사후점검(Follow-up)",
+      "aliases": [
+        "사후점검",
+        "사후점검(Follow-up)",
+        "Follow-up"
+      ]
+    },
+    {
+      "name": "지역이미지",
+      "english": "Destination Image",
+      "definition": "방문자가 지역에 대해 형성하는 인식·인상",
+      "slide": 28,
+      "raw": "지역이미지(Destination Image)",
+      "aliases": [
+        "지역이미지",
+        "지역이미지(Destination Image)",
+        "Destination Image"
+      ]
+    },
+    {
+      "name": "구전",
+      "english": "Word of Mouth",
+      "definition": "이용 경험이 사람 사이에 전달되는 정보",
+      "slide": 28,
+      "raw": "구전(Word of Mouth)",
+      "aliases": [
+        "구전",
+        "구전(Word of Mouth)",
+        "Word of Mouth"
+      ]
+    },
+    {
+      "name": "접근성",
+      "english": "Accessibility",
+      "definition": "고객이 정보·서비스·시설에 쉽게 도달할 수 있는 정도",
+      "slide": 29,
+      "raw": "접근성(Accessibility)",
+      "aliases": [
+        "접근성",
+        "접근성(Accessibility)",
+        "Accessibility"
+      ]
+    },
+    {
+      "name": "서비스 동선",
+      "english": "Service Journey",
+      "definition": "고객이 시설에서 이동·문의·결제하는 흐름",
+      "slide": 29,
+      "raw": "서비스 동선(Service Journey)",
+      "aliases": [
+        "서비스 동선",
+        "서비스 동선(Service Journey)",
+        "Service Journey"
+      ]
+    },
+    {
+      "name": "표준작업절차",
+      "english": "SOP, Standard Operating Procedure",
+      "definition": "반복 업무의 기본 순서와 책임을 정한 절차",
+      "slide": 30,
+      "raw": "표준작업절차(SOP, Standard Operating Procedure)",
+      "aliases": [
+        "표준작업절차",
+        "표준작업절차(SOP, Standard Operating Procedure)",
+        "SOP, Standard Operating Procedure"
+      ]
+    },
+    {
+      "name": "서비스 일관성",
+      "english": "Consistency",
+      "definition": "담당자·시간이 달라도 기본 원칙이 유지되는 성질",
+      "slide": 30,
+      "raw": "서비스 일관성(Consistency)",
+      "aliases": [
+        "서비스 일관성",
+        "서비스 일관성(Consistency)",
+        "Consistency"
+      ]
+    },
+    {
+      "name": "물리적 증거",
+      "english": "Physical Evidence",
+      "definition": "고객이 서비스 수준을 판단하는 시설·표지·청결 등의 환경",
+      "slide": 31,
+      "raw": "물리적 증거(Physical Evidence)",
+      "aliases": [
+        "물리적 증거",
+        "물리적 증거(Physical Evidence)",
+        "Physical Evidence"
+      ]
+    },
+    {
+      "name": "공동시설",
+      "english": "",
+      "definition": "여러 입점업체가 함께 이용·관리하는 공간",
+      "slide": 31,
+      "raw": "공동시설",
+      "aliases": [
+        "공동시설",
+        ""
+      ]
+    },
+    {
+      "name": "고객피드백",
+      "english": "Customer Feedback",
+      "definition": "이용자의 칭찬·제안·불만 정보",
+      "slide": 32,
+      "raw": "고객피드백(Customer Feedback)",
+      "aliases": [
+        "고객피드백",
+        "고객피드백(Customer Feedback)",
+        "Customer Feedback"
+      ]
+    },
+    {
+      "name": "개선순환",
+      "english": "PDCA",
+      "definition": "계획(Plan)→실행(Do)→점검(Check)→개선(Action)의 반복",
+      "slide": 32,
+      "raw": "개선순환(PDCA)",
+      "aliases": [
+        "개선순환",
+        "개선순환(PDCA)",
+        "PDCA"
+      ]
+    },
+    {
+      "name": "역할극",
+      "english": "Role-play",
+      "definition": "고객·판매자 역할을 맡아 실제 응대를 모의 연습",
+      "slide": 33,
+      "raw": "역할극(Role-play)",
+      "aliases": [
+        "역할극",
+        "역할극(Role-play)",
+        "Role-play"
+      ]
+    },
+    {
+      "name": "피드백",
+      "english": "Feedback",
+      "definition": "수행 결과를 보고 개선할 점을 알려주는 의견",
+      "slide": 33,
+      "raw": "피드백(Feedback)",
+      "aliases": [
+        "피드백",
+        "피드백(Feedback)",
+        "Feedback"
+      ]
+    },
+    {
+      "name": "접수",
+      "english": "Intake",
+      "definition": "고객 불편을 공식적으로 받아 적는 단계",
+      "slide": 34,
+      "raw": "접수(Intake)",
+      "aliases": [
+        "접수",
+        "접수(Intake)",
+        "Intake"
+      ]
+    },
+    {
+      "name": "사실확인",
+      "english": "Fact-checking",
+      "definition": "주장과 주문·결제·검수 자료를 대조하는 과정",
+      "slide": 34,
+      "raw": "사실확인(Fact-checking)",
+      "aliases": [
+        "사실확인",
+        "사실확인(Fact-checking)",
+        "Fact-checking"
+      ]
+    },
+    {
+      "name": "실행계획",
+      "english": "Action Plan",
+      "definition": "행동·담당자·기한·확인방법을 명시한 계획",
+      "slide": 35,
+      "raw": "실행계획(Action Plan)",
+      "aliases": [
+        "실행계획",
+        "실행계획(Action Plan)",
+        "Action Plan"
+      ]
+    },
+    {
+      "name": "성과확인",
+      "english": "Verification",
+      "definition": "계획한 행동이 실제로 이행됐는지 점검",
+      "slide": 35,
+      "raw": "성과확인(Verification)",
+      "aliases": [
+        "성과확인",
+        "성과확인(Verification)",
+        "Verification"
+      ]
+    }
+  ],
+  "qa": []
+}
