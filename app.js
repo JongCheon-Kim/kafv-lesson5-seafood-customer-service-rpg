@@ -9,13 +9,13 @@ const norm=t=>String(t||'').normalize('NFKC').toLowerCase().replace(/[^0-9a-z가
 let n=1,view='theory',chatInitialized=false;
 const getSlide=i=>slides.find(x=>x.num===i),termForSlide=i=>terms.filter(x=>x.slide===i), el=(tag,className,text)=>{const x=document.createElement(tag);if(className)x.className=className;if(text!==undefined)x.textContent=text;return x;};
 function cutNum(i){return String(i).padStart(2,'0')}
-function setView(which){if(!['theory','practice','simulator'].includes(which))which='theory';view=which;for(const section of ['theory','practice','simulator']){$(section+'-screen').hidden=(section!==which)}$('parts-nav').hidden=which!=='theory';$('theory-tab').classList.toggle('selected',which==='theory');$('practice-tab').classList.toggle('selected',which!=='theory');window.KAFV_SIM?.onView(which)}
+function setView(which){if(!['theory','practice','simulator'].includes(which))which='theory';if(which!=='theory')window.KAFV_THEORY_UI?.returnHome();view=which;document.body.classList.toggle('theory-mode',which==='theory');for(const section of ['theory','practice','simulator']){$(section+'-screen').hidden=(section!==which)}$('parts-nav').hidden=which!=='theory';$('theory-tab').classList.toggle('selected',which==='theory');$('practice-tab').classList.toggle('selected',which!=='theory');window.KAFV_SIM?.onView(which)}
 function setSlide(i){n=Math.min(35,Math.max(1,i));const s=getSlide(n);setView('theory');$('part-name').textContent=`PART ${cutNum(s.part)} · ${L.parts[s.part-1]}`;$('lecture-title').textContent=`${cutNum(n)}컷 · ${s.title}`;$('lecture-text').textContent=s.core;
 $('image-guide').textContent=s.image;
 $('slide-image').src=s.img;$('slide-image').alt=`${cutNum(n)}컷 · ${s.title}`;$('slide-foot').textContent=`${cutNum(n)}컷`; $('image-title').textContent=s.title;
-const chips=$('term-chips');chips.replaceChildren();for(const t of termForSlide(n)){const b=el('button','pill',t.name);b.type='button';b.title='부캉이에게 이 용어 질문하기';b.addEventListener('click',()=>{openChat();sendMessage(t.name+'이란?')});chips.appendChild(b)}
+const chips=$('term-chips');chips.replaceChildren();for(const t of termForSlide(n)){const b=el('button','pill',t.name);b.type='button';b.title='부캉이에게 이 용어 질문하기';b.addEventListener('click',()=>{window.KAFV_BUKANGI?.open();sendMessage(t.name+'이란?')});chips.appendChild(b)}
 $('slide-select').value=String(n);$('slide-foot-head').textContent=`${cutNum(n)} / 35`;$('prev-slide').disabled=n===1;$('next-slide').disabled=n===35;$$('.part').forEach(x=>x.classList.toggle('active',Number(x.dataset.part)===s.part));renderSuggestions();
-$('lecture-scroll').scrollTop=0;window.KAFV_SIM?.onSlide(n);
+$('lecture-scroll').scrollTop=0;window.KAFV_SIM?.onSlide(n);window.KAFV_THEORY_UI?.sync(n);
 // Remember only the selected slide, not personal details.
 try{localStorage.setItem('kafv_lesson5_slide_050',String(n))}catch{}
 }
@@ -25,12 +25,12 @@ $$('.part').forEach((b,j)=>{b.dataset.part=String(j+1);b.addEventListener('click
 $('prev-slide').addEventListener('click',()=>setSlide(n-1));$('next-slide').addEventListener('click',()=>setSlide(n+1));
 $('theory-tab').addEventListener('click',()=>setView('theory'));
 $('practice-tab').addEventListener('click',()=>setView('simulator'));
-$('slide-image').addEventListener('click',()=>openZoom());$('zoom-slide').addEventListener('click',openZoom);$('close-zoom').addEventListener('click',()=>{$('zoom-overlay').hidden=true});
+$('zoom-slide').addEventListener('click',openZoom);$('close-zoom').addEventListener('click',()=>{$('zoom-overlay').hidden=true});
 $('zoom-overlay').addEventListener('click',e=>{if(e.target===$('zoom-overlay'))$('zoom-overlay').hidden=true});
 
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('zoom-overlay').hidden=true}else if(view==='theory'&&!$('chat').classList.contains('open')&&!['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)){if(e.key==='ArrowRight')setSlide(n===35?1:n+1);if(e.key==='ArrowLeft')setSlide(n===1?35:n-1)}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('zoom-overlay').hidden=true}else if(view==='theory'&&!$('chat').classList.contains('open')&&!e.defaultPrevented&&!['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)&&!e.target.closest('[role=separator]')){if(e.key==='ArrowRight')setSlide(n===35?1:n+1);if(e.key==='ArrowLeft')setSlide(n===1?35:n-1)}});
 }
-function openZoom(){$('zoom-image').src=getSlide(n).img;$('zoom-image').alt=getSlide(n).title;$('zoom-overlay').hidden=false}
+function openZoom(){if(window.KAFV_THEORY_UI){window.KAFV_THEORY_UI.openFloating();return;}$('zoom-image').src=getSlide(n).img;$('zoom-image').alt=getSlide(n).title;$('zoom-overlay').hidden=false}
 /* Q&A resolver. It does not synthesize unsupported facts. */
 function ngrams(s,len=2){s=norm(s);return new Set(Array.from({length:Math.max(0,s.length-len+1)},(_,i)=>s.slice(i,i+len)))}
 function similarity(a,b){const na=ngrams(a),nb=ngrams(b);if(!na.size||!nb.size)return 0;let k=0;for(const x of na)if(nb.has(x))k++;return 2*k/(na.size+nb.size)}
@@ -54,7 +54,7 @@ if(ranked[0]?.score>=0.72)return {answer:ranked[0].item.answer,refs:[ranked[0].i
 return {answer:'현재 제5차시 용어자료에서 확인 가능한 답을 찾지 못했습니다. 정확한 용어를 짧게 입력하거나 강사에게 문의해 주세요.',refs:[]};}
 function addMessage(body,type,refs){const msg=el('div',`msg ${type}`,body);if(refs&&refs.length){const refsEl=el('div','msg-ref','관련 강의: '+[...new Set(refs)].map(cutNum).join('·')+'컷');msg.appendChild(refsEl);for(const ref of [...new Set(refs)]){if(ref<1||ref>35)continue;const b=el('button','ref-btn',`${cutNum(ref)}컷 보기`);b.type='button';b.addEventListener('click',()=>setSlide(ref));msg.appendChild(b)}}$('msgs').append(msg);$('msgs').scrollTop=$('msgs').scrollHeight;}
 
-const bukkangiHelpTopics = [["01 이론", "35컷 이미지를 보면서 왼쪽 강의록의 ①핵심 나레이션 ②주요 용어 ③그림 해설을 확인합니다. 정식 제5차시 나레이션은 파일 확인 후 연결됩니다."], ["이 이미지 실습하기", "실습 미션과 연결된 컷에서 녹색 버튼으로 해당 실습으로 이동합니다."], ["02 실습", "7개 공간의 24개 미션과 33·34·35번 실습기록서를 이용할 수 있습니다. 작업이력은 CSV로 보관합니다."], ["부캉이", "확인된 용어를 질문할 수 있습니다. AI 외부 서비스에 연결되지는 않습니다."], ["주의사항", "실제 상품의 안전성과 고객 보상·법적 책임을 자동 판단하는 앱이 아닙니다."]];
+const bukkangiHelpTopics = [["01 이론", "35컷 이미지를 보면서 왼쪽 강의록의 ①핵심 나레이션 ②주요 용어 ③그림 해설을 확인합니다. 제5차시 승인 강의 나레이션과 그림 해설을 제공합니다."], ["이 이미지 실습하기", "실습 미션과 연결된 컷에서 녹색 버튼으로 해당 실습으로 이동합니다."], ["02 실습", "7개 공간의 24개 미션과 33·34·35번 실습기록서를 이용할 수 있습니다. 작업이력은 CSV로 보관합니다."], ["부캉이", "확인된 용어를 질문할 수 있습니다. AI 외부 서비스에 연결되지는 않습니다."], ["주의사항", "실제 상품의 안전성과 고객 보상·법적 책임을 자동 판단하는 앱이 아닙니다."]];
 function showBukkangiHelp(){
  const msg=el('article','msg bot help-content');
  msg.setAttribute('aria-label','부캉이 사용방법');

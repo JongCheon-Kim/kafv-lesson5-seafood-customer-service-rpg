@@ -1,6 +1,6 @@
 (()=>{'use strict';
 const area=document.getElementById('theory-screen'),bar=document.getElementById('theory-splitter');if(!area||!bar)return;
-const key='kafv_q4_theory_left_share_v042',defaultShare=27;
+const key='kafv_lesson5_theory_left_share_v114',defaultShare=23;
 const clamp=v=>Math.max(18,Math.min(57,v));
 let stored=defaultShare;try{const n=Number(localStorage.getItem(key));if(Number.isFinite(n)&&n>=18&&n<=57)stored=n;}catch{}
 function apply(value,persist=false){const share=clamp(value);area.style.setProperty('--theory-left',share.toFixed(1)+'%');bar.setAttribute('aria-valuenow',String(Math.round(share)));bar.setAttribute('aria-valuetext',`강의록 ${Math.round(share)}퍼센트, 슬라이드 ${Math.round(100-share)}퍼센트`);if(persist)try{localStorage.setItem(key,String(share))}catch{};return share;}

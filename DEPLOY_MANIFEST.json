@@ -1,10 +1,14 @@
 {
-  "stage": "05_customer_service_rpg_v1.0.13",
-  "created": "2026-11-07",
-  "source_archive": "KAFV_제5차시_RPG_v1.0.13_실습버튼_효과음_전체실행본.zip",
-  "source_zip_sha256": "890dd7822430cdef1163c20228704f6ead48ed3b1491eae0726ffb1481cfd642",
+  "stage": "05_customer_service_rpg_v1.0.14_common_theory_ui",
+  "created": "2026-11-18",
+  "source_archive": "kafv-lesson5-seafood-customer-service-rpg-main.zip",
+  "source_zip_sha256": "7ced8703b118d15e7b0eacc66535543da84102e7e7455d601758a8c24b7431eb",
+  "ui_master": "Lesson4 v0.4.9 / Lesson3 v0.7.20",
+  "rpg_version": "1.0.13",
   "files": {
-    "app.js": "a0137e90fc6ffebf7354a164894a6514c67becd531dcdc9a4c85844593212541",
+    "DEPLOY_README.md": "ea3948fd42e50bcdb9015db7180e0f97bb820ab80079a2793974710c401155eb",
+    "QA_REPORT.md": "96fbf42067b93dfa5d05007a558a6091203350e1752c44502afee8f22109df5a",
+    "app.js": "1d0d78b8c0853577b9e5377437b1d4fa7df541bb916d3f95fe5c6dea57397ef3",
     "assets/01.webp": "708eaf4a84e2a9726f6af46590533ab3cb007a74bf0e078b45d5412568aaa868",
     "assets/02.webp": "635e31a361b6370bcdc3abc0c97bdaf7204d29d1f396ea53a43c13210552ce38",
     "assets/03.webp": "b3c519f4d0b6e27095598f9d1ac9b4b4f0f45385116b1566f7542c78c12b26f6",
@@ -82,7 +86,7 @@
     "game-art/storage_wall.webp": "33eaa985e5b68893d170d20bbb025958dcc301c4f054b332e9ea756fd584e14c",
     "game-art/store_sign.webp": "eedc8ba916cd62d1b3ca6cf48ed016b77d507dc635cc5682ef0d43dcbeb10478",
     "game-art/wood_shelf.webp": "037d10bd3913a40fb06a4f151faa66627f7b417d88e6b7a473fb73cab3152863",
-    "index.html": "a3e4f38fb0944b476df35e4bffb10acbc4755c1c7c9a5381e6d85e10d320d44b",
+    "index.html": "63e574c5f92231cead1bf06f05f06a9677bbfa951113db93f8955211e2204508",
     "rpg-controls.js": "3585295180729e63fc34006bcec7e2cdb9252f2bcff2ef33be099585da00a4f5",
     "rpg-v080.css": "dfe8a8857dc8fcee671f7cfe3c7ee1e97cd19dd8c5d5474329f6305a7cbda82d",
     "rpg-v080.js": "85b880730acc1450f5a73f76bc24b09b6b1c0916cb9ce36d5b2f39ffd77c9912",
@@ -118,10 +122,9 @@
     "rpg.css": "52011197ac15593a7e9615af7a58478abf54e911083b67a4cca3cc53433e602d",
     "simulator.css": "c4ebf84b41d622ce07bf773151d44f213cf44d63f84c91510492f443eccfd209",
     "simulator.js": "c6819f56bec31bf403d83a329f41bdf8c3f95d1d22cd24278d0d6acb1bb5730e",
-    "theory-splitter.js": "ada37a83f1bf12e2ccf989ab431ca6c69ae756e019b1cafb0716cba472a66ac1"
-  },
-  "source_entry_count": 253,
-  "runtime_file_count": 115,
-  "missing_html_assets": [],
-  "status": "staged_not_deployed"
+    "theory-qr.js": "156f41abf37cf2b6c5d6bd035aca8a43904e9c26b2d23eec5f5d3d60d19615c8",
+    "theory-splitter.js": "9305d30ab5cd2a96273f4fb3beb5ddd0b90bd8dff20e4d937a121a13f90680f1",
+    "theory-thumbs.js": "c22b67a852019eef48e943eb7cb5dda482e8fa609f62c25fb520c0a8430844cd",
+    "theory-ui.js": "60a860566c59023e22d9d9263762d79688067dec4ea84155984b7a317ffad4ca"
+  }
 }
