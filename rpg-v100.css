@@ -52,7 +52,8 @@
 .gv-seller .gv-npc-hit{top:30px;height:144px}
 .gv-role{pointer-events:auto;cursor:pointer}
 .gv-bubble{pointer-events:none}
-@media(max-width:700px){.gv-viewport{height:576px!important;overflow-x:auto!important;overflow-y:hidden!important;touch-action:pan-x}.gv-world{transform:scale(.72)!important;transform-origin:top left!important}}
+/* Mobile-fit fix: rely on the existing JS viewport-width scaling (rpg-v100.js this.resize).
+   Removed the old forced 72% scene zoom and fixed 576px viewport, which clipped the right-hand side of the market. */
 
 .gv-exit.open .gv-door-panel{transform:perspective(100px) rotateY(65deg)}
 

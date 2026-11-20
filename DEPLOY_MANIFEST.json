@@ -1,12 +1,13 @@
 {
-  "stage": "05_customer_service_rpg_v1.0.14_common_theory_ui",
-  "created": "2026-11-18",
-  "source_archive": "kafv-lesson5-seafood-customer-service-rpg-main.zip",
-  "source_zip_sha256": "7ced8703b118d15e7b0eacc66535543da84102e7e7455d601758a8c24b7431eb",
+  "stage": "05_customer_service_rpg_v1.0.15_mobile_responsive",
+  "created": "2026-11-20",
+  "source_archive": "kafv-lesson5-seafood-customer-service-rpg-main(1).zip",
+  "source_zip_sha256": "692f97b9d076f08fcd8b04ea5c2f5675bd896f1ad78fa74a952300189d3049ad",
   "ui_master": "Lesson4 v0.4.9 / Lesson3 v0.7.20",
   "rpg_version": "1.0.13",
   "files": {
     "DEPLOY_README.md": "ea3948fd42e50bcdb9015db7180e0f97bb820ab80079a2793974710c401155eb",
+    "MOBILE_QA_REPORT_v1.0.15.md": "42416498d66e23dec7b3844adc207275fc22f9a1cb677f2546c98f9c78641b00",
     "QA_REPORT.md": "96fbf42067b93dfa5d05007a558a6091203350e1752c44502afee8f22109df5a",
     "app.js": "1d0d78b8c0853577b9e5377437b1d4fa7df541bb916d3f95fe5c6dea57397ef3",
     "assets/01.webp": "708eaf4a84e2a9726f6af46590533ab3cb007a74bf0e078b45d5412568aaa868",
@@ -86,7 +87,9 @@
     "game-art/storage_wall.webp": "33eaa985e5b68893d170d20bbb025958dcc301c4f054b332e9ea756fd584e14c",
     "game-art/store_sign.webp": "eedc8ba916cd62d1b3ca6cf48ed016b77d507dc635cc5682ef0d43dcbeb10478",
     "game-art/wood_shelf.webp": "037d10bd3913a40fb06a4f151faa66627f7b417d88e6b7a473fb73cab3152863",
-    "index.html": "63e574c5f92231cead1bf06f05f06a9677bbfa951113db93f8955211e2204508",
+    "index.html": "825a320c2df182f23ba4cf95bc06f2997c9504bedf6b00f53ccc0990fcd39556",
+    "mobile-responsive.css": "dbbf6d7f21d98311f6837ac97883728d0976fcb636c1d56d7d3a019a1d99666a",
+    "mobile-responsive.js": "a58f45b14e3b12cf65b6d09ce6be9662ed23a19e5ac009868e01b8f1962ab252",
     "rpg-controls.js": "3585295180729e63fc34006bcec7e2cdb9252f2bcff2ef33be099585da00a4f5",
     "rpg-v080.css": "dfe8a8857dc8fcee671f7cfe3c7ee1e97cd19dd8c5d5474329f6305a7cbda82d",
     "rpg-v080.js": "85b880730acc1450f5a73f76bc24b09b6b1c0916cb9ce36d5b2f39ffd77c9912",
@@ -94,7 +97,7 @@
     "rpg-v081.js": "ede63d3edf4bf85b7f037f11cd393d3e09d5f4e5dd9c9ccdede26d82915d3a6a",
     "rpg-v090.css": "3aded90aa01b098684bf19bcc86ba3d670f85f5c80518586b345d804f4121537",
     "rpg-v090.js": "a09cf5f63b8a9286667f268030a2baf93715cea7935679e7d4957431da11c32b",
-    "rpg-v100.css": "8184d5b63677256436d077e803d2ea766fa9cd7f8d5111088b2fc89c925179ba",
+    "rpg-v100.css": "f025173fc1d521c7d7ec2b1cde3e585a481c3b464e0ece8ef701b7365cc6d11a",
     "rpg-v100.js": "172603532a0c2ff0824c2e975a89df0393c3caa17230a655e090d34ab65b4b8f",
     "rpg-v101.css": "109f464ccdc26e9c2db66ab20be98a00759912ad48462c8e8939dea2013638a5",
     "rpg-v101.js": "1f2f49d3f61719bd8e7bd03026ce907d858e61aaca1145a0ef20b2e4cf486be9",
@@ -126,5 +129,15 @@
     "theory-splitter.js": "9305d30ab5cd2a96273f4fb3beb5ddd0b90bd8dff20e4d937a121a13f90680f1",
     "theory-thumbs.js": "c22b67a852019eef48e943eb7cb5dda482e8fa609f62c25fb520c0a8430844cd",
     "theory-ui.js": "60a860566c59023e22d9d9263762d79688067dec4ea84155984b7a317ffad4ca"
-  }
+  },
+  "based_on": "Lesson 5 v1.0.14 GitHub PASS",
+  "mobile_test_count": 129,
+  "mobile_test_pass": 129,
+  "changes": [
+    "index.html",
+    "rpg-v100.css",
+    "mobile-responsive.css",
+    "mobile-responsive.js"
+  ],
+  "preserved_source_files": 119
 }

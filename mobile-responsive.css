@@ -1,0 +1,78 @@
+/* KAFV Lesson 5 v1.0.15 — targeted mobile presentation patch.
+   Only <=820px: teaching screen + RPG outer shell. Do not change mission logic, hit areas,
+   original images, dialogues or desktop UI. Mobile entire scene uses existing JS fit scaling. */
+@media (max-width:820px), (max-width:1024px) and (max-height:550px) and (hover:none){
+  html,body{max-width:100%;overflow-x:clip}
+  body.theory-mode{height:auto;min-height:100dvh;max-width:100%;overflow-x:clip;overflow-y:auto}
+  body.theory-mode .top{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:5px 7px;padding:6px 7px;height:auto;min-height:0}
+  body.theory-mode .brand{grid-column:1;grid-row:1;min-width:0;max-width:100%;overflow:hidden}
+  body.theory-mode .brand b{font-size:13px}
+  body.theory-mode .brand .theory-version{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  body.theory-mode .top .tabs{grid-column:2;grid-row:1;min-width:0;gap:4px}
+  body.theory-mode .top .tab{min-width:58px;min-height:34px;padding:5px 7px;font-size:11px}
+  body.theory-mode .theory-header-tools{grid-column:1/-1;grid-row:2;order:initial;min-width:0;width:100%;flex-basis:auto;gap:4px}
+  body.theory-mode .theory-header-tools select{flex:1 1 0;min-width:0;width:0;max-width:none;height:32px;font-size:11px}
+  body.theory-mode .theory-header-tools .theory-btn{min-height:32px;min-width:30px;padding:5px 7px;font-size:11px}
+  body.theory-mode .theory-top-actions{grid-column:1/-1;grid-row:3;order:initial;flex-basis:auto;display:flex;justify-content:flex-start;gap:5px;min-width:0;max-width:100%;flex-wrap:wrap;margin:0}
+  body.theory-mode .theory-top-actions .theory-btn{min-height:30px;font-size:10px;padding:5px 8px}
+  body.theory-mode .parts{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;width:100%;min-width:0;padding:0}
+  body.theory-mode .part,body.theory-mode .part.active{min-width:0;min-height:54px;height:auto;gap:2px;padding:5px 6px;font-size:10px;line-height:1.25;overflow-wrap:anywhere;word-break:keep-all}
+  body.theory-mode .part .unit-number{font-size:9px}
+  body.theory-mode .part small{font-size:9px}
+  body.theory-mode #theory-screen.app{display:flex;flex-direction:column;flex:0 0 auto;height:auto;min-height:0;width:100%;gap:5px;padding:0}
+  body.theory-mode #theory-screen .theory-splitter{display:none}
+  body.theory-mode #theory-screen .viewer{order:1;height:auto!important;min-height:0!important;max-height:none;flex:0 0 auto;overflow:hidden}
+  body.theory-mode #theory-screen .theory-visual-home{height:auto;min-height:0;flex:none;overflow:visible;padding:5px}
+  body.theory-mode #theory-stage{height:auto;min-height:0;flex:none;overflow:visible;gap:3px}
+  body.theory-mode #theory-stage .slidebox{flex:none;height:auto;min-height:0;aspect-ratio:1672 / 941;padding:0;overflow:hidden}
+  body.theory-mode #theory-stage .slidebox img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:1672 / 941;object-fit:contain}
+  body.theory-mode #theory-screen .lecture{order:2;height:auto;min-height:0;max-height:none;flex:0 0 auto;overflow:hidden}
+  body.theory-mode #theory-screen .lecture-scroll{height:auto;min-height:0;flex:none;overflow:visible}
+  body.theory-mode #theory-screen .lecture-foot-nav{flex:none}
+  #theory-screen .theory-panel-head{min-width:0;overflow:hidden}
+  #theory-screen .theory-panel-tools{flex:0 0 auto;gap:3px}
+  #theory-screen .theory-panel-tools .theory-btn{min-height:24px;font-size:9px;padding:4px 5px}
+  #theory-stage .theory-visual-foot{min-height:24px}
+  /* Existing RPG scene JS computes the uniform scale = availableWidth / 1672.
+     Do not force 72% zoom or a fixed 576px viewport: show the complete scene. */
+  #simulator-screen{box-sizing:border-box;width:calc(100% - 14px)!important;max-width:calc(100% - 14px)!important;margin:0 7px 15px!important;padding:0 7px 10px!important}
+  #simulator-screen .sim-grid,#simulator-screen .sim-stage,#simulator-screen .gv-app,#simulator-screen .gv-root{min-width:0;max-width:100%;}
+  #simulator-screen.gv-v100-ready .sim-grid{display:block!important;grid-template-columns:none!important;}
+  #simulator-screen.gv-v100-ready .sim-stage{width:100%!important;max-width:100%!important;}
+  #simulator-screen .gv-viewport{overflow:hidden;max-width:100%;touch-action:auto;}
+  #simulator-screen .gv-topbar{max-width:100%;height:auto;min-height:0;flex-wrap:wrap;gap:5px;padding:7px;align-items:center;justify-content:flex-start;overflow:visible}
+  #simulator-screen .gv-brand{min-width:0;max-width:100%;flex:1 1 160px;gap:6px}
+  #simulator-screen .gv-brand b{white-space:normal;overflow-wrap:anywhere;font-size:12px}
+  #simulator-screen .gv-actions{min-width:0;width:100%;display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-start}
+  #simulator-screen .gv-actions button{min-width:0;flex:1 1 calc(33.333% - 6px);font-size:10px;line-height:1.25;white-space:normal;min-height:32px;padding:5px 4px}
+  #simulator-screen .gv-bottom{display:flex;flex-wrap:wrap;gap:5px;min-width:0;padding:7px}
+  #simulator-screen .gv-missionname{min-width:0;max-width:100%;flex:1 1 100%;width:100%}
+  #simulator-screen .gv-steps{min-width:0;width:100%;flex:1 1 100%;grid-template-columns:repeat(7,minmax(0,1fr))}
+  #simulator-screen .gv-step{min-width:0;padding:2px}
+  #simulator-screen .gv-step b{font-size:7px;white-space:normal;overflow-wrap:anywhere;word-break:keep-all;text-align:center}
+  #simulator-screen .gv-percent{flex:0 1 100%;max-width:100%;width:100%;}
+  #simulator-screen .gv-disclaimer{overflow-wrap:anywhere}
+}
+@media (max-width:360px){
+  body.theory-mode .part,body.theory-mode .part.active{padding:4px;font-size:9px}
+  body.theory-mode .top .tab{min-width:52px}
+  body.theory-mode .theory-top-actions .theory-btn{font-size:9px;padding:4px 6px}
+  #theory-screen .theory-panel-tools .theory-btn{padding:3px;font-size:8px}
+}
+
+/* Optional close-up exploration on narrow phones: complete scene remains the default.
+   Original RPG hit-zone geometry and event handlers remain untouched. */
+.gv-mobile-view-toggle{display:none}
+@media (max-width:700px){
+  #simulator-screen .gv-mobile-view-toggle{display:block;flex:1 1 calc(33.333% - 6px);min-height:32px;padding:5px 4px;font-size:10px}
+  #simulator-screen .gv-app.gv-mobile-zoom .gv-viewport{height:576px!important;overflow-x:auto!important;overflow-y:hidden!important;touch-action:pan-x;overscroll-behavior-x:contain;scrollbar-width:thin}
+  #simulator-screen .gv-app.gv-mobile-zoom .gv-world{transform:scale(.72)!important;transform-origin:top left!important}
+}
+
+/* A rotated phone may report more than 820 CSS pixels but has very little height. */
+@media (max-width:1024px) and (max-height:550px) and (hover:none){
+  body:not(.theory-mode) .top{min-height:0;height:auto;flex-wrap:wrap;gap:7px;padding:7px}
+  body:not(.theory-mode) .brand{min-width:0}
+  body:not(.theory-mode) .brand b{font-size:13px}
+  #simulator-screen .sim-hero{min-height:0}
+}
